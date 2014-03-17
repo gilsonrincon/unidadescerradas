@@ -49,4 +49,33 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	//Relación de que puede pertenecer a un propietarios
+	public function owner()
+	{
+		return $this->belongsTo('Owner', 'ownerId');
+	}
+
+	//Relación de que puede pertenecer a un residente
+	public function resident()
+	{
+		return $this->belongsTo('Resident', 'residentId');
+	}
+
+	//Relación de que puede tener muchos clasificados
+	public function classified()
+	{
+		return $this->hasMany('Classified', 'userId');
+	}
+
+	//Relación de que puede tener muchas publicaciones en la cartelera informativa
+	public function bulletinBoard()
+	{
+		return $this->hasMany('BulletinBoard', 'userId');
+	}
+
+	//Relación de que puede tener muchas quejas
+	public function classified()
+	{
+		return $this->hasMany('Complaint', 'userId');
+	}
 }
