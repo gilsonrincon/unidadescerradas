@@ -74,7 +74,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	//Relación de que puede tener muchas quejas
-	public function classified()
+	public function complaint()
 	{
 		return $this->hasMany('Complaint', 'userId');
 	}

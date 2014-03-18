@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Classified extends Eloquent implements UserInterface, RemindableInterface {
+class Classified extends Eloquent {
 
 	/**
 	 * The database table used by the model.

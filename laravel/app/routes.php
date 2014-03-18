@@ -88,3 +88,11 @@ Route::get('contacto', function()
 {
 	return View::make('contacto');
 });
+
+
+
+/*Rutas del controlador de usuarios*/
+Route::resource('users', 'UsersController');
+
+//Rutas para el controlador de los clasificados
+Route::resource('classified', 'ClassifiedController');

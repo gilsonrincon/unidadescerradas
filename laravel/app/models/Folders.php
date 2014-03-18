@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Folder extends Eloquent implements UserInterface, RemindableInterface {
+class Folder extends Eloquent {
 
 	/**
 	 * The database table used by the model.
