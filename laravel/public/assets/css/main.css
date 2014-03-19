@@ -1,0 +1,345 @@
+/*Estilos del cuerpo*/
+body, html {
+	background: url("../images/bodyBackground.png") no-repeat;
+	background-size: 100%;
+}
+/*Estilos para las listas*/
+ul li, ul {
+	padding-left: 0px;
+	list-style: none;
+}
+
+/* Estilos para el logo, lo posicionamos de forma absoluta*/
+#logo {
+	position: absolute;
+	z-index: 1;
+}
+
+/*Estilos del menu principal*/
+#main-menu {
+	background: url("../images/menuBackground.png");
+	background-size: 100% 100%;
+	min-height: 69px;
+	max-width: 1122px;
+	padding-left: 180px;
+}
+
+/*Estilos de los items del menu principal*/
+#main-menu ul li{
+	border-left: 1px solid #5D5D5D;
+	display: inline-block;
+	margin: 20px 0 5px 0;
+	padding: 0 18px 0 18px;
+	position: relative;
+}
+
+#main-menu ul li.first-item {
+	border-left: 0px;
+}
+
+/*Estilos de los enlaces del menu principal*/
+#main-menu ul li a {
+	color: #5D5D5D; 
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+/*Estilos del contenedor de los botones de acceso*/
+#btns-access {
+	padding-top: 5px;
+}
+
+/*Estilos de los enlaces del contendor de acceso*/
+#btns-access a {
+	color: #028CBC;
+	font-size: 9px;
+}
+
+/*Boton de login*/
+#btn-login {
+	background: url("../images/btnLoginBackground.png") no-repeat;
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 10px;
+}
+
+/*Boton de registrarse*/
+#btn-signin {
+	padding-left: 10px;
+}
+
+/*Boton de publicar un clasificado*/
+#btn-publish {
+	background: url("../images/btnPublish.png");
+	background-size: 100% 100%;
+	color: #000 !important;
+	display: block;
+	padding: 5px 10px 5px 10px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+/*Estilos para los sub-menus o menus desplegables*/
+#main-menu ul li ul {
+	top: 20px;
+	display: none;
+	left: 0px;
+	position: absolute;
+	z-index: 10;
+}
+
+/*Estilos del sub-menu para que se muestre*/
+#main-menu ul li:hover ul {
+	background: url("../images/submenuBack.png");
+	background-size: 100% 100%;
+	display: block;
+	padding-bottom: 15px;
+	padding-left: 0px;
+}
+
+/*Estilos de los items del sub-menu*/
+#main-menu ul li ul li {
+	border-left: 0px;
+	margin: 10px;
+	padding: 0px;
+	min-width: 190px;
+}
+
+/*Estilos de los enlaces del sub-menu*/
+#main-menu ul li ul li a {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/*Estilos del main home*/
+#main-home {
+	background: #fff;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px #888888;
+	overflow: hidden;
+	padding: 20px;
+}
+
+/*Estilo del titulo de clasificados*/
+#classified h1 {
+	background: url("../images/classified.png");
+	background-size: 100% 100%;
+	color: #fff;
+	height: 48px;
+	margin-top: 0px;
+	padding-top: 5px;
+	position: relative;
+	text-align: center;
+	z-index: 10;
+}
+
+/*Estilos de la lista de clasificados del home*/
+#classified ul {
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0px 0px 15px #888888;
+	margin-top: -15px;
+	overflow: hidden;
+	padding: 10px;
+}
+
+/*Estilos de los items la lista de clasificados del home*/
+#classified ul li {
+	border: 1px solid #737B6C;
+	border-radius: 5px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+/*Titulo de los clasificados en el home*/
+#classified ul li h3 {
+	color: #0082A5;
+	font-size: 14px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	text-transform: uppercase;
+}
+
+/*Unidades cerradas del home*/
+#closed-unit {
+	background: url("../images/closedUnit.png");
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+/*Encabezado de unidades cerradas*/
+#closed-unit h1 {
+	border-bottom: 1px solid #9B9B9B;
+	color: #0082A5;
+	font-size: 24px;
+	text-align: center;
+}
+
+/*Parrafos en unidades cerradas*/
+#closed-unit p {
+	font-size: 11px;
+}
+
+/*Lista de elementos en unidades cerradas*/
+#closed-unit ul {
+	margin-bottom: 15px;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+/*Items de la lista en unidades cerradas*/
+#closed-unit li {
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+/*boton de pagar la administración*/
+#btn-admin {
+	background: url("../images/adminPay.png") no-repeat #028CBC;
+	background-position: 95%;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	font-size: 18px;
+	height: 71px;
+	padding: 25px 0 0 20px;
+}
+
+/*Boton de quejas*/
+#btn-complaints {
+	background: url("../images/complaints.png") no-repeat #028CBC;
+	background-position: 95%;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	font-size: 18px;
+	height: 71px;
+	padding: 25px 0 0 20px;
+}
+
+/*Boton de clasificados*/
+#btn-publish-classified {
+	background: url("../images/btnClassifiedBack.png") no-repeat #028CBC;
+	background-position: 95%;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	font-size: 16px;
+	height: 71px;
+	padding: 25px 0 0 20px;
+}
+
+/*Ver mas*/
+.view-more {
+	background: #000000;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	float: right;
+	font-size: 14px;
+	margin-top: 5px;
+	padding: 2px 0;
+	text-align: center;
+	width: 100px;
+}
+
+/*Todos los clasificados*/
+#all-classified {
+	background: url("../images/allClassifiedTitle.png");
+	background-size: 100% 100%;
+	color: #fff;
+	margin-top: 20px;
+	min-height: 67px;
+	padding-bottom: 10px;
+	text-align: center;
+	z-index: 10;
+}
+
+#all-classified h1 {
+	font-size: 20px;
+	margin-top: 20px;
+	text-transform: uppercase;
+}
+
+/*Estilos del contenedor de la lista de clasificados inferior*/
+#all-classified-lists {
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0px 0px 15px #888888;
+	margin-top: -15px;
+	overflow: hidden;
+}
+
+#all-classified-lists div #no-premium{
+	padding-left: 20px;
+	padding-top: 50px;
+}
+
+#all-classified-lists #no-premium li a {
+	border: 1px solid #5D5D5D;
+	border-left: 10px solid #5D5D5D;
+	border-radius: 0 5px 5px 0;
+	color: #5D5D5D;
+	display: block;
+	margin: 15px 0;
+	padding: 10px 0 10px 20px;
+}
+
+.btn-viewall {
+	display: block;
+	width: 70px;
+	margin: auto;
+}
+
+#all-classified-lists div #premium{
+	padding-left: 20px;
+	padding-top: 50px;
+}
+
+#all-classified-lists div #premium li {
+	border: 1px solid #5D5D5D;
+	border-radius: 5px;
+	margin: 5px 0;
+	padding: 5px;
+	overflow: hidden;
+}
+
+#all-classified-lists div #premium li img {
+	padding: 0px;
+	padding-right: 15px;
+}
+
+#sub-menu {
+	margin-top: 10px;
+}
+
+#sub-menu li {
+	border-right: 1px solid #5D5D5D;
+	display: inline-block;
+	text-align: center;
+	width: 19%;
+}
+
+#sub-menu li a {
+	color: #5D5D5D;
+}
+
+#foot-bt {
+	margin-bottom: 20px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+footer {
+	background: #DDDDDD;
+	font-size: 10px;
+	padding-bottom: 15px;
+	padding-top: 20px;
+}
+
+#foot-mid {
+	text-align: center;
+	padding-top: 30px;
+}
+
+#foot-mid a {
+	color: #5D5D5D;
+}
