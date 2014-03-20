@@ -1,6 +1,14 @@
 {{ link_to('classified/create', 'Nuevo') }}
-<ul>
-@foreach($classified as $c)
-	<li>{{ $c->title }}</li>
-@endforeach
-</ul>
+<table>
+	<tr>
+		<th>Titulo</th>
+		<th></th>
+		<th></th>
+	</tr>
+	@foreach($classified as $c)
+		<tr>
+			<td>{{ $c->title }}</td>
+			<td><a href="{{ route('classified.edit', array($c->id)) }}">Editar</a></td>
+		</tr>
+	@endforeach
+</table>

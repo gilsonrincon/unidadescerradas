@@ -188,6 +188,34 @@
 					<li style="border-right:none"><a href="/">Presupuesto del año</a></li>
 				</ul>
 			</section>
+
+			<section>
+				<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+				
+				<div id="map-container" class="col-md-12" >
+					<div id="map" class="col-md-12" style="height: 229px"></div>
+				</div>
+
+				<script>
+					var mapa = new google.maps.LatLng(6.1963627, -75.5585778);	//Coordenadas
+					var opciones = {
+					    zoom : 17,
+					    center: mapa,
+					    mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					var div = document.getElementById('map');
+					var map = new google.maps.Map(div, opciones);
+
+					// Creamos un marcador y lo posicionamos en el mapa
+					var marcador = new google.maps.Marker({
+					  position: new google.maps.LatLng(6.1963627, -75.5585778), //Coordenadas
+					  map: map,
+					  icon: "http://creacioninmobiliaria.com/img/maps.png"
+					});
+				</script>
+
+
+			</section>
 			<div id="foot-bt" class="col-md-12">
 				años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad 
 				de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la 

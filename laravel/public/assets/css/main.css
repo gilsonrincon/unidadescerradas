@@ -308,7 +308,8 @@ ul li, ul {
 }
 
 #sub-menu {
-	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-top: 30px;
 }
 
 #sub-menu li {
@@ -323,8 +324,10 @@ ul li, ul {
 }
 
 #foot-bt {
+	font-size: 10px;
 	margin-bottom: 20px;
 	margin-top: 30px;
+	padding: 0 145px;
 	text-align: center;
 }
 
@@ -342,4 +345,9 @@ footer {
 
 #foot-mid a {
 	color: #5D5D5D;
+}
+
+#map-container {
+	border-bottom: 1px solid #000000;
+	padding: 0 25px 15px 25px;
 }

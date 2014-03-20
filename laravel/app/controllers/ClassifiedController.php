@@ -71,7 +71,17 @@ class ClassifiedController extends BaseController {
 	*/
 	public function edit($id)
 	{
+		//Obtenemos el clasificado
+		$classified = Classified::find($id);
 
+		//Arreglo de los meses del año
+		$months = array('Enero', 'Febrero', 'Marzo', 
+						'Abril', 'Mayo', 'Junio', 
+						'Julio', 'Agosto', 'Septiembre', 
+						'Octubre', 'Noviembre', 'Diciembre');
+
+		//Retornamos la vista, pasandole el arreglo de los meses.
+		return View::make('classified.edit', array('months'=>$months, 'classified'=>$classified));
 	}
 
 	/*
@@ -80,7 +90,8 @@ class ClassifiedController extends BaseController {
 
 	public function update($id)
 	{
-
+		//$classified = Classified::find($id);
+		//echo "hola";
 	}	
 
 	/*
