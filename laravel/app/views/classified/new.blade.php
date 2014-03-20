@@ -1,4 +1,4 @@
-{{ Form::open(array('route' => 'classified.store', 'method'=>'POST'), array('role'=>'form')) }}
+{{ Form::open(array('route' => 'classified.store', 'method'=>'POST', 'files'=>true), array('role'=>'form')) }}
 	<!-- Campo para el titulo -->
 	{{ Form::label('title', 'Titulo') }}
 	{{ Form::input('text', 'title') }}<br>
@@ -65,6 +65,10 @@
 			<option value="{{ $user->id }}">{{ $user->username }}</option>
 		@endforeach
 	</select>
+
+	<!--Imagen -->
+	{{ Form::file('image')}}
+
 	{{ Form::button('Guardar', array('type'=>'submit'))}}
 
 {{ Form::close() }}

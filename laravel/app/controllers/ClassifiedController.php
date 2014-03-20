@@ -63,6 +63,24 @@ class ClassifiedController extends BaseController {
 		
 		//Guardamos y retornamos a la lista de clasificados
 		$classified->save();
+
+		//En caso de que este la imagen
+		if(Input::file('image')):
+			//La copiamos en una carpeta classifiedImages
+			$img = Input::file('image');
+			$img->move("classifiedImages", $img->getClientOriginalName());
+
+			//Obtenemos el ultimo clasificado
+			$classified = Classified::all()->last();
+			
+			//Guardamos la imagen relacionandola con el ultimo clasificado
+			$saveImg = new ImageClassified();
+			$saveImg->image = $img->getClientOriginalName();
+			$saveImg->classifiedId = $classified->id;
+			$saveImg->save();
+		endif;
+		
+		//Redireccionamos
 		return Redirect::to('classified');
 	}
 
