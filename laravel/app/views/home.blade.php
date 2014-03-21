@@ -22,7 +22,13 @@
 					} else {
 						$("#closed-unit").appendTo('#main-home')
 						$("#premium").appendTo('#all-classified-lists')
+						$("#hide-menu").slideUp(20)
 					}
+				});
+
+				$("#display-menu").click(function(event) {
+					/*Mostramos el menu desplegable*/
+					$("#hide-menu").slideToggle(500);
 				});
 			})
 		</script>
@@ -79,11 +85,22 @@
 
 					<!--Menu auxiliar para resoluciones menores de 980px-->
 					<nav id="auxiliary">
-						<a id="display-menu" href="/">
+						<a id="display-menu">
 							<img src="assets/images/btnDisplayMenu.png" alt="Menu">
 						</a>
 						<a id="btn-login-auxiliary" href="/">Ingresar</a>
 						<a id="btn-publish-auxiliary" href="/">Publique su clasificado</a>
+					</nav>
+					<nav>
+						<ul id="hide-menu">
+							<li><a href="/">Inicio</a></li>
+							<li><a href="/">Clasificados</a></li>
+							<li><a href="/">Pagar administración</a></li>
+							<li><a href="/">Información</a></li>
+							<li><a href="/">Eventos</a></li>
+							<li><a href="/">Quejas</a></li>
+							<li><a href="/">Contacto</a></li>
+						</ul>
 					</nav>
 				</header>
 			</div>
@@ -107,6 +124,16 @@
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 										Eveniet consequuntur omnis in esse veritatis id pariatur. 
 										Doloribu.</p>
+									</div>
+								</li>
+
+								<li>
+									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
+									<div class="bulleingBoard col-md-8">
+										<h3>Informe:</h3>
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+										Eveniet consequuntur omnis in esse veritatis id pariatur. 
+										Doloribus</p>
 									</div>
 								</li>
 

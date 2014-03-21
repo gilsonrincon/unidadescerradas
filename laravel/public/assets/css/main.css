@@ -412,6 +412,8 @@ footer {
 
 /*Estilo del boton de mostrar el menu que muestra el menu el resoluciones menores de 980px*/
 #display-menu {
+	background: #2C3F75;
+	cursor: pointer;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -440,6 +442,22 @@ footer {
 	text-align: center;
 	width: 214px;
 	vertical-align: top;
+}
+
+/*Estilo del menu auxiliar*/
+#hide-menu {
+	background: #2C3F75;
+	display: none;
+	text-align: center;
+}
+
+/*Enlaces del menu auxiliar*/
+#hide-menu a {
+	color: #fff;
+	display: block;
+	font-family: Arial;
+	font-size: 18px;
+	padding: 5px 0;
 }
 
 /*Estilos para resoluciones menores a los 980px*/
