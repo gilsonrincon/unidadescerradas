@@ -6,6 +6,26 @@
 		<!-- Enlaces a la hojas de estilo -->
 		<link rel="stylesheet" href="assets/css/bootstrap.css">
 		<link rel="stylesheet" href="assets/css/main.css">
+		
+		<!-- Enlaces para el javascript -->
+		<script src="assets/js/jquery.js"></script>
+		<script>
+			$(document).on('ready', function(){
+				if($(window).width() <= 980){
+					$("#bulleing-board").appendTo('#main-home')
+					$("#no-premium").appendTo('#all-classified-lists')
+				}
+				$(window).resize(function(event) {
+					if($(window).width() <= 980){
+						$("#bulleing-board").appendTo('#main-home')
+						$("#no-premium").appendTo('#all-classified-lists')
+					} else {
+						$("#closed-unit").appendTo('#main-home')
+						$("#premium").appendTo('#all-classified-lists')
+					}
+				});
+			})
+		</script>
 	</head>
 	<body>
 		<!-- Contenedor para poder usar bootstrap -->
@@ -56,6 +76,15 @@
 							<a id="btn-publish" href="/">Publique su clasificado</a>
 						</div>
 					</nav>
+
+					<!--Menu auxiliar para resoluciones menores de 980px-->
+					<nav id="auxiliary">
+						<a id="display-menu" href="/">
+							<img src="assets/images/btnDisplayMenu.png" alt="Menu">
+						</a>
+						<a id="btn-login-auxiliary" href="/">Ingresar</a>
+						<a id="btn-publish-auxiliary" href="/">Publique su clasificado</a>
+					</nav>
 				</header>
 			</div>
 			
@@ -65,15 +94,15 @@
 					<div id="main-home">
 						<!-- Imagen de banner-->
 						<div class="col-md-12">
-							<img src="assets/images/banner.png" alt="Banner">
+							<img id="banner" class="col-md-12" src="assets/images/banner.png" alt="Banner">
 						</div>
 						<!-- Contenedor de los clasificados -->
-						<div id="classified" class="col-md-6">
+						<div id="bulleing-board" class="col-md-6">
 							<h1>Cartelera Informativa</h1>
 							<ul>
 								<li>
-									<img class="col-md-4" src="assets/images/classifiedMin.png" alt="Clasificado">
-									<div class="classified col-md-8">
+									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
+									<div class="bulleingBoard col-md-8">
 										<h3>Informe:</h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 										Eveniet consequuntur omnis in esse veritatis id pariatur. 
@@ -82,8 +111,8 @@
 								</li>
 
 								<li>
-									<img class="col-md-4" src="assets/images/classifiedMin.png" alt="Clasificado">
-									<div class="classified col-md-8">
+									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
+									<div class="bulleingBoard col-md-8">
 										<h3>Informe:</h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 										Eveniet consequuntur omnis in esse veritatis id pariatur. 
@@ -92,8 +121,8 @@
 								</li>
 
 								<li>
-									<img class="col-md-4" src="assets/images/classifiedMin.png" alt="Clasificado">
-									<div class="classified col-md-8">
+									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
+									<div class="bulleingBoard col-md-8">
 										<h3>Informe:</h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 										Eveniet consequuntur omnis in esse veritatis id pariatur. 
@@ -139,45 +168,29 @@
 					<h1>Clasificados de interes para todos</h1>
 				</div>
 				<div id="all-classified-lists" class="col-md-12">
-					<div class="col-md-6">
-						<ul id="no-premium">
-							<li><a href="/">VENDO APARATAMENTO CASA 201 LLAMAR 315 689 9565</a></li>
-							<li><a href="/">VENDO APARATAMENTO CASA 201 LLAMAR 315 689 9565</a></li>
-							<li><a href="/">VENDO APARATAMENTO CASA 201 LLAMAR 315 689 9565</a></li>
-							<li><a href="/">VENDO APARATAMENTO CASA 201 LLAMAR 315 689 9565</a></li>
-							<li><a href="/">VENDO APARATAMENTO CASA 201 LLAMAR 315 689 9565</a></li>
+					<div id="no-premium" class="col-md-6">
+						<ul >
+						@foreach ($classifiedNoPremium as $classified)
+							<li><a href="/">{{ $classified->shortDescription }}</a></li>
+						@endforeach
 						</ul>
+						<a class="view-all" href="/">Ver todos</a>
 					</div>
 
-					<div class="col-md-6">
-						<ul id="premium">
-							<li>
-								<img class="col-md-4" src="assets/images/classifiedMin.png" alt="Clasificado">
-								Vendo moto AKT  en buen esta modelo 2013
-								con 2 cascos papeles al dia....<br>
-								<a class="view-more" href="/">Ver más</a>
-							</li>
-
-							<li>
-								<img class="col-md-4" src="assets/images/classifiedMin.png" alt="Clasificado">
-								Vendo moto AKT  en buen esta modelo 2013
-								con 2 cascos papeles al dia....<br>
-								<a class="view-more" href="/">Ver más</a>
-							</li>
-
-							<li>
-								<img class="col-md-4" src="assets/images/classifiedMin.png" alt="Clasificado">
-								Vendo moto AKT  en buen esta modelo 2013
-								con 2 cascos papeles al dia....<br>
-								
-							</li>
+					<div id="premium" class="col-md-6">
+						<ul>
+							@foreach ($classifiedPremium as $classified)
+								<li class="col-md-12">
+									<img src="classifiedImages/{{ $classified->image->image }}" alt="Clasificado">
+									<div>{{ $classified->shortDescription }}</div>
+									<a class="view-more hide-tablet" href="/">Ver más</a>
+								</li>
+							@endforeach
 						</ul>
-					</div>
-					<div class="col-md-12" style="text-align:center">
-						<a class="col-md-6" href="/">Ver todos</a>
-						<a class="col-md-6" href="/">Ver todos</a>
+						<a class="view-all" href="/">Ver todos</a>
 					</div>
 				</div>
+				<a id="min-more-classified" class="view-more" href="/">Ver más</a>
 			</section>
 			<section>
 				<ul id="sub-menu" class="col-md-12">
@@ -226,7 +239,7 @@
 
 		<footer>
 			<div class="container">
-				<div class="col-md-4">
+				<div class="col-md-4 text-foot">
 					en este sitio web podras encontrar informacion de la unidad correrspondiente
 					puedes encontrar , noticias , reglamento, consultas, y acontecimientos importantes
 					tambien puedes pagar la administracion por este portal. 
@@ -238,7 +251,7 @@
 					</a>
 				</div>
 
-				<div class="col-md-4">
+				<div class="col-md-4 text-foot">
 					en este sitio web podras encontrar informacion de la unidad correrspondiente
 					puedes encontrar , noticias , reglamento, consultas, y acontecimientos importantes
 					tambien puedes pagar la administracion por este portal. 

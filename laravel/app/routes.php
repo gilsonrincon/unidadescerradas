@@ -11,11 +11,8 @@
 |
 */
 
-//Ruta del Home
-Route::get('/', function()
-{
-	return View::make('home');
-});
+//Ruta del Home, lleva al controlador home, en show welcome
+Route::get('/', 'homeController@showWelcome');
 
 //Ruta de la reservacion de los servicios
 Route::get('reservaciondeservicios', function()

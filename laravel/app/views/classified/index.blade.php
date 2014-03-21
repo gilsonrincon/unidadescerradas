@@ -7,8 +7,8 @@
 	</tr>
 	@foreach($classified as $c)
 		<tr>
-			<td>{{ $c->title }}</td>
-			<td><a href="{{ route('classified.edit', array($c->id)) }}">Editar</a></td>
+			<td>{{ $c->title }} - {{ $c->premium }}</td>
+			<!--<td><a href="{{ route('classified.edit', array($c->id)) }}">Editar</a></td>-->
 		</tr>
 	@endforeach
 </table>

@@ -11,7 +11,11 @@ ul li, ul {
 
 /* Estilos para el logo, lo posicionamos de forma absoluta*/
 #logo {
+	background: #fff;
+	padding-bottom: 4px;
+	padding-top: 4px;
 	position: absolute;
+	width: 199px;
 	z-index: 1;
 }
 
@@ -111,6 +115,19 @@ ul li, ul {
 	padding-right: 20px;
 }
 
+/*
+	Ocultamos el menu auxiliar, pero le aplicamos los estilos que se muestran
+	cuando la resolucion es menor a 980px
+*/
+
+#auxiliary {
+	display: none;
+	background: #3A3A3A;
+	height: 69px;
+	text-align: center;
+	width: 100%;
+}
+
 /*Estilos del main home*/
 #main-home {
 	background: #fff;
@@ -121,20 +138,23 @@ ul li, ul {
 }
 
 /*Estilo del titulo de clasificados*/
-#classified h1 {
-	background: url("../images/classified.png");
+#bulleing-board h1 {
+	background: url("../images/bulleingBoard.png");
 	background-size: 100% 100%;
 	color: #fff;
 	height: 48px;
+	font-size: 25px;
+	margin: auto;
 	margin-top: 0px;
-	padding-top: 5px;
+	max-width: 515px;
+	padding-top: 10px;
 	position: relative;
 	text-align: center;
 	z-index: 10;
 }
 
 /*Estilos de la lista de clasificados del home*/
-#classified ul {
+#bulleing-board ul {
 	border-radius: 0 0 20px 20px;
 	box-shadow: 0px 0px 15px #888888;
 	margin-top: -15px;
@@ -143,7 +163,7 @@ ul li, ul {
 }
 
 /*Estilos de los items la lista de clasificados del home*/
-#classified ul li {
+#bulleing-board ul li {
 	border: 1px solid #737B6C;
 	border-radius: 5px;
 	padding-top: 10px;
@@ -151,7 +171,7 @@ ul li, ul {
 }
 
 /*Titulo de los clasificados en el home*/
-#classified ul li h3 {
+#bulleing-board ul li h3 {
 	color: #0082A5;
 	font-size: 14px;
 	margin-bottom: 0px;
@@ -268,11 +288,20 @@ ul li, ul {
 	overflow: hidden;
 }
 
-#all-classified-lists div #no-premium{
+/*estilo de los enlaces de ver todos*/
+.view-all {
+	display: block;
+	margin: auto;
+	width: 65px;
+}
+
+/*Contenedor de clasificados que no son premium*/
+#all-classified-lists #no-premium{
 	padding-left: 20px;
 	padding-top: 50px;
 }
 
+/*Enlaces de los clasificados que nos son premium*/
 #all-classified-lists #no-premium li a {
 	border: 1px solid #5D5D5D;
 	border-left: 10px solid #5D5D5D;
@@ -283,35 +312,58 @@ ul li, ul {
 	padding: 10px 0 10px 20px;
 }
 
+/*Boton de ver todos*/
 .btn-viewall {
 	display: block;
 	width: 70px;
 	margin: auto;
 }
 
-#all-classified-lists div #premium{
+/*Contenedor de clasificados premium*/
+#all-classified-lists #premium{
 	padding-left: 20px;
 	padding-top: 50px;
 }
 
-#all-classified-lists div #premium li {
+/*Clasificados premium*/
+#all-classified-lists #premium li {
 	border: 1px solid #5D5D5D;
 	border-radius: 5px;
 	margin: 5px 0;
 	padding: 5px;
+	position: relative;
 	overflow: hidden;
 }
 
-#all-classified-lists div #premium li img {
+/*Imagen dentro de los clasificados premium*/
+#all-classified-lists #premium li img {
+	display: inline-block;
+	height: 57px;
 	padding: 0px;
 	padding-right: 15px;
+	width: 111px;
 }
 
+/*Descripcion de los clasificados premium*/
+#all-classified-lists #premium li div {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*Estilos del enlace de ver mas en premium*/
+#all-classified-lists #premium li a {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+/*Menu inferior*/
 #sub-menu {
 	margin-bottom: 20px;
 	margin-top: 30px;
 }
 
+/*Items del menu inferior*/
 #sub-menu li {
 	border-right: 1px solid #5D5D5D;
 	display: inline-block;
@@ -319,10 +371,18 @@ ul li, ul {
 	width: 19%;
 }
 
+/*Enlaces del menu inferior*/
 #sub-menu li a {
 	color: #5D5D5D;
 }
 
+/*Contenedor del mapa*/
+#map-container {
+	border-bottom: 1px solid #000000;
+	padding: 0 25px 15px 25px;
+}
+
+/*Texto que se encuentra del mapa*/
 #foot-bt {
 	font-size: 10px;
 	margin-bottom: 20px;
@@ -331,6 +391,7 @@ ul li, ul {
 	text-align: center;
 }
 
+/*Pie de la pagina*/
 footer {
 	background: #DDDDDD;
 	font-size: 10px;
@@ -338,16 +399,201 @@ footer {
 	padding-top: 20px;
 }
 
+/*elemento del medio del pie*/
 #foot-mid {
 	text-align: center;
 	padding-top: 30px;
 }
 
+/*Enlace en el medio del pie*/
 #foot-mid a {
 	color: #5D5D5D;
 }
 
-#map-container {
-	border-bottom: 1px solid #000000;
-	padding: 0 25px 15px 25px;
+/*Estilo del boton de mostrar el menu que muestra el menu el resoluciones menores de 980px*/
+#display-menu {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*Boton de login auxiliar*/
+#btn-login-auxiliary {
+	background: url("../images/btnLoginBackground2.png") no-repeat;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	margin-left: 30px;
+	margin-top: 25px;
+	padding-left: 30px;
+	padding-right: 10px;
+	vertical-align: top;
+}
+
+/*Boton de publicar clasificado en el menu auxiliar*/
+#btn-publish-auxiliary {
+	background: url("../images/btnPublish2.png");
+	color: #fff;
+	display: inline-block;
+	height: 49px;
+	margin-top: 10px;
+	padding-top: 15px;
+	text-align: center;
+	width: 214px;
+	vertical-align: top;
+}
+
+/*Estilos para resoluciones menores a los 980px*/
+@media (max-width: 990px){
+	/*Quitamos el fondo del cuerpo*/
+	body, html {
+		background: #fff;
+	}
+
+	.container {
+		padding: 0px;
+		width: 100%;
+	}
+
+	/*Quitamos el banner*/
+	#banner {
+		display: none;
+	}
+
+	/*Cambiamos el estilo del main home*/
+	#main-home {
+		box-shadow: 0px 0px 0px #888888;
+		padding: 0px;
+	}
+
+	/*Se cambia la apariencia de unidad cerrada*/
+	#closed-unit {
+		background: #fff;
+	}
+
+	#closed-unit p {
+		padding: 0 45px;
+	}
+
+	/*Se quita el borde del titulo de unidad cerrada*/
+	#closed-unit h1 {
+		border-bottom: 0px;
+		padding-bottom: 20px;
+	}
+
+	#closed-unit p {
+		font-size: 12px;
+		padding-bottom: 30px;
+	}
+
+	/*Se ocultan elementos de unidad cerrada*/
+	#closed-unit ul {
+		display: none;
+	}
+
+	/*Ver mas*/
+	.view-more {
+		float: none;
+		font-size: 20px;
+		margin: auto;
+		padding: 10px 0;
+		width: 165px;
+	}
+
+	/*Modificaciones a la lista de la tabla de boletines*/
+	#bulleing-board ul {
+		box-shadow: 0px 0px 0px #888888;
+		margin-top: 30px;
+	}
+
+	/*Modificaciones a los items de la tabla de boletines*/
+	#bulleing-board ul li {
+		margin-bottom: 10px;
+	}
+	
+	/*Relleno superior para el encabezado de todos los clasificados*/
+	#all-classified h1 {
+		padding-top: .85em;	
+	}
+	
+	/*Ocultamos varios elementos como es el mapa, sub menu y algunos textos */
+	#map-container, #sub-menu, #foot-bt, footer .text-foot {
+		display: none;
+	}
+	
+	/*Se cambia el relleno del contenedor del medio del footer*/
+	footer #foot-mid {
+		padding-top: 10px;
+	}
+
+	/*Elemenos varios que se ocultan*/
+	.hide-tablet, .view-all {
+		display: none;
+	}
+
+	#all-classified-lists {
+		padding: 0px;
+	}
+
+	#all-classified-lists div {
+		padding: 0px;
+	}
+
+	/*Cambiamos el relleno de los clasificados premium: ;*/
+	#all-classified-lists div #premium {
+		padding-top: 10px;
+	}
+	
+	/*estilos del contenedor principal de las listas de clasificados*/
+	#all-classified-lists {
+		box-shadow: 0px 0px 0px #888888;
+	}
+	
+	/*Cambiamos el relleno de la lista de elementos que no son premium*/
+	#no-premium {
+		padding-top: 0px !important;
+		padding-left: 0px !important;
+	}
+	
+	/*Cambiamos el borde de los items de la lista que no son premium*/
+	#all-classified-lists #no-premium li a{
+		border-left: 0px;
+		border-right: 0px;
+		border-top: 1px solid ;
+		border-bottom: 1px solid;
+		border-radius: 0px;
+	}
+
+	/*Mostramos el enlace de ver todos los clasificados que es para estas resoluciones*/
+	#min-more-classified {
+		margin-bottom: 40px;
+	}
+
+	/*Acomodamos el logo*/
+	#logo {
+		padding-bottom: 0px;
+		padding-top: 0px;
+		position: relative;
+		width: 100%;
+	}
+	
+	/*Ocultamos el menu principal*/
+	#main-menu {
+		display: none;
+	}
+	
+	/*Mostramos el menu auxiliar*/
+	#auxiliary {
+		display: block;
+	}
+}
+
+@media (max-width: 480px){
+	#btn-publish-auxiliary {
+		display: none;
+	}
+
+	#auxiliary{
+		padding-left: 15px;
+		text-align: left;
+	}
 }
