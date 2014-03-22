@@ -76,7 +76,7 @@
 						</ul>
 
 						<!-- Enlaces de acceso y para publicar un clasificado -->
-						<div id="btns-access" class="col-md-2">
+						<div id="btns-access">
 							<a id="btn-login" href="/">Ingresar</a><span style="color:">|</span>
 							<a id="btn-signin" href="/">Registrarse</a>
 							<a id="btn-publish" href="/">Publique su clasificado</a>
