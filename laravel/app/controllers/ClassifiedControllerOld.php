@@ -1,7 +1,8 @@
 <?php
 
-class ClassifiedController extends \BaseController {
-	
+//Controlador de usuarios, con este controlador, se crea, edita y borra usuarios
+class ClassifiedController extends BaseController {
+
 	/*
 		Lista de todos los clasificados
 	*/
@@ -14,6 +15,7 @@ class ClassifiedController extends \BaseController {
 	/*
 		Formulario para crear un nuevo clasificado
 	*/
+
 	public function create()
 	{
 		//Obtenemos la lista de usuarios
@@ -32,6 +34,7 @@ class ClassifiedController extends \BaseController {
 	/*
 		Crear nuevos clasificados
 	*/
+
 	public function store()
 	{
 		//Creamos un nuevo clasificado
@@ -81,28 +84,39 @@ class ClassifiedController extends \BaseController {
 		return Redirect::to('classified');
 	}
 
-	
-	public function show($id)
-	{
-		//
-	}
-
-	
+	/*
+		Editamos los clasificados
+	*/
 	public function edit($id)
 	{
-		//
+		//Obtenemos el clasificado
+		$classified = Classified::find($id);
+
+		//Arreglo de los meses del año
+		$months = array('Enero', 'Febrero', 'Marzo', 
+						'Abril', 'Mayo', 'Junio', 
+						'Julio', 'Agosto', 'Septiembre', 
+						'Octubre', 'Noviembre', 'Diciembre');
+
+		//Retornamos la vista, pasandole el arreglo de los meses.
+		return View::make('classified.edit', array('months'=>$months, 'classified'=>$classified));
 	}
 
-	
+	/*
+		Guardamos cuando se edita un clasificado
+	*/
+
 	public function update($id)
 	{
-		//
-	}
+		//$classified = Classified::find($id);
+		//echo "hola";
+	}	
 
-	
-	public function destroy($id)
+	/*
+		Borramos el clasificado
+	*/
+	public function delete($id)
 	{
-		//
-	}
 
+	}
 }

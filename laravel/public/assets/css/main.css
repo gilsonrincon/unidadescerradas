@@ -539,6 +539,7 @@ footer {
 		margin-left: 3%;
 		margin-right: 2%;
 		margin-bottom: 10px;
+		vertical-align: top;
 		width: 44%;
 	}
 	
@@ -684,5 +685,14 @@ footer {
 	/*Boton auxiliar de publicar un clasificado*/
 	#btn-publish-auxiliary {
 		padding-top: 5px;
+	}
+}
+
+/*Resolución menor a 980px*/
+@media (min-width: 980px){
+	#bulleing-board ul li img {
+		height: 70px;
+		padding-bottom: 16px;
+		width: 171px;
 	}
 }

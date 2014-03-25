@@ -93,3 +93,6 @@ Route::resource('users', 'UsersController');
 
 //Rutas para el controlador de los clasificados
 Route::resource('classified', 'ClassifiedController');
+
+//Rutas para el controlador de la tabla de bolatines
+Route::resource('bulletins', 'BulletinBoardController');

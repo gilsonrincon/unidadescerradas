@@ -17,4 +17,10 @@ class BulletinBoard extends Eloquent {
 	{
 		return $this->belongsTo('User', 'userId');
 	}
+
+	//Relación de que tiene una imagen
+	public function image()
+	{
+		return $this->hasOne('ImageBulletinBoard', 'bulletinId');
+	}
 }

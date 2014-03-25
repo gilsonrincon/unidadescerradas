@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBulletinBoard extends Migration {
+class CreateImagesBulletinBoard extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +12,13 @@ class CreateBulletinBoard extends Migration {
 	 */
 	public function up()
 	{
-		//Creamos la tabla de la cartelera informativa
-		Schema::create('bulletinBoard', function($table){
+		//Creamos la tabla de las imagenes para la tabla de la cartelera informativa
+		Schema::create('imagesBulletinBoard', function($table){
 			//Campo de ID
 			$table->increments('id');
 
-			$table->string('title');
-			$table->text('shortDescription');
-			$table->text('description');
-			$table->date('startDate');
-			$table->date('endDate');
-			$table->integer('userId');
+			$table->string('image');
+			$table->integer('bulletinId');
 			
 			//Campos de tiempo
 			$table->timestamps();
@@ -37,7 +33,7 @@ class CreateBulletinBoard extends Migration {
 	public function down()
 	{
 		//Borramos la tabla
-		Schema::drop('bulletinBoard');
+		Schema::drop('imagesBulletinBoard');
 	}
 
 }

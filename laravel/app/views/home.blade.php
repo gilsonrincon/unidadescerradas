@@ -117,45 +117,17 @@
 						<div id="bulleing-board" class="col-md-6">
 							<h1>Cartelera Informativa</h1>
 							<ul>
-								<li>
-									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
-									<div class="bulleingBoard col-md-8">
-										<h3>Informe:</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-										Eveniet consequuntur omnis in esse veritatis id pariatur. 
-										Doloribu.</p>
-									</div>
-								</li>
+								@foreach ($bulletins as $b)
+									<li>
+										<img class="col-md-4" src="bulletinsImages/{{ $b->image->image }}" alt="">
+										
+										<div class="bulleingBoard col-md-8">
+											<h3>{{$b->title}}:</h3>
+											<p>{{$b->shortDescription}}</p>
+										</div>
+									</li>
+								@endforeach
 
-								<li>
-									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
-									<div class="bulleingBoard col-md-8">
-										<h3>Informe:</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-										Eveniet consequuntur omnis in esse veritatis id pariatur. 
-										Doloribus</p>
-									</div>
-								</li>
-
-								<li>
-									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
-									<div class="bulleingBoard col-md-8">
-										<h3>Informe:</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-										Eveniet consequuntur omnis in esse veritatis id pariatur. 
-										Doloribus</p>
-									</div>
-								</li>
-
-								<li>
-									<img class="col-md-4" src="assets/images/bulleingBoardMin.png" alt="Clasificado">
-									<div class="bulleingBoard col-md-8">
-										<h3>Informe:</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-										Eveniet consequuntur omnis in esse veritatis id pariatur. 
-										Doloribus</p>
-									</div>
-								</li>
 								<a class="view-more" href="/">Ver más</a>
 							</ul>
 
