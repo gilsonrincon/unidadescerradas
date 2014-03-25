@@ -8,6 +8,11 @@ ul li, ul {
 	padding-left: 0px;
 	list-style: none;
 }
+/*Estilo para los estados de los enlaces*/
+a:hover, a:focus {
+	color: #5D5D5D;
+	text-decoration: none;
+}
 
 /* Estilos para el logo, lo posicionamos de forma absoluta*/
 #logo {
