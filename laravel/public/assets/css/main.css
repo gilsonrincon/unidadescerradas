@@ -137,7 +137,6 @@ a:hover, a:focus {
 	display: none;
 	background: #3A3A3A;
 	text-align: center;
-	width: 100%;
 }
 
 /*Estilos del main home*/
@@ -471,9 +470,122 @@ footer {
 	padding: 5px 0;
 }
 
+/*Boton de mas clasificados para resoluciones menores*/
 #min-more-classified {
 	display: none;
 }
+
+/*Titulos*/
+.title {
+	background: url("../images/internalTitlesBack.png");
+	background-size: 100% 100%;
+	color: #fff;
+	font-size: 13px;
+	height: 40px;
+	margin-bottom: 0px;
+	padding-top: 13px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*contenedor del formulario de registro*/
+#register, #login {
+	background: #fff;
+	border-radius: 0 0 20px 20px;
+	box-shadow: 0px 0px 15px #888888;
+	overflow: hidden;
+	padding: 50px 15% 30px 15%;
+	position: relative;
+}
+
+/*Estilos de los inputs*/
+#register .text, #login .text {
+	border: 1px solid #000000;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	padding: 5px;
+	width: 100%;
+}
+
+/*Estilo de los label para el correo y la contraseña en el login*/
+#email-label, #pass-label {
+	background: url("../images/userLoginBack.png") no-repeat;
+	display: block;
+	margin: auto;
+	padding-left: 40px;
+}
+
+#pass-label {
+	background: url("../images/passLoginBack.png") no-repeat;
+}
+
+/*Estilo de los labels*/
+#register label {
+	font-size: 9px;
+	margin-left: 15px;
+	vertical-align: middle;
+}
+
+/*Estilo del boton de registrarse*/
+.btn-submit {
+	background: url("../images/btnRegister.png");
+	background-size: 100% 100%; 
+	border: 0px; 
+	color: #fff;
+	font-size: 7px;
+	height: 21px;
+	position: absolute;
+	text-transform: uppercase;
+	right: 15px;
+	width: 83px;
+}
+
+/*Estilo del contenedor del formulario de login*/
+#login-form {
+	margin: auto;
+	margin-top: 80px;
+	position: relative;
+	max-width: 440px;
+	width: 100%;
+}
+
+/*Estilos del contenedor de rocordarme, olvide mi contraseña y registrarse*/
+#login-form div {
+	font-size: 8px;
+	margin-top: 30px;
+}
+
+/*Estilos de los enlaces de rocordarme, olvide mi contraseña y registrarse*/
+#login-form div a, #login-form div label {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: 30%;
+}
+
+#login-form div label {
+	text-align: left;
+}
+
+#login-form div {
+	padding-left: 25px;
+}
+
+/*Contenido normalmente oculto*/
+.normal-hide {
+	display: none !important;
+}
+
+#btn-login-container {
+	overflow: hidden;
+}
+
+/*Estilo del boton de login*/
+#btn-login-container .btn-submit {
+	float: right;
+	position: relative;
+}
+
 
 /*Estilos para resoluciones menores a los 980px*/
 @media (max-width: 990px){
@@ -502,7 +614,7 @@ footer {
 	#closed-unit {
 		background: #fff;
 	}
-
+	
 	#closed-unit p {
 		padding: 0 45px;
 	}
@@ -638,6 +750,52 @@ footer {
 	#min-more-classified {
 		display: block;
 	}
+
+	/*Cambio en el tamaño del boton de registrarse*/
+	.btn-submit {
+		font-size: 11px;
+		height: 40px;
+		width: 140px;
+	}
+
+	/*Cambiamos el relleno del boton de registrarse*/
+	#register, #login {
+		box-shadow: 0 0 0 #fff;
+		padding: 5%;
+	}
+
+	/*Contenedor de los elemenos auxiliares*/
+	#auxiliary{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	/*Estilo del titulo*/
+	.title {
+		background: #fff;
+		color: #3879A5;
+	}
+	
+	/*Mostramos contenido oculto*/
+	.normal-hide {
+		display: inline-block !important;
+	}
+	
+	/*Ocultamos el recordarme normal*/
+	#login-form div label {
+		display: none;
+	}
+
+	#remember-mobile {
+		font-size: 16px;
+		font-weight: normal;
+	}
+
+	#login-form div a {
+		font-size: 12px;
+		width: 48%;
+	}
+
 }
 /*Resolucion maxima de 480px*/
 @media (max-width: 480px){
@@ -664,8 +822,10 @@ footer {
 	
 	/*Contenedor de los elemenos auxiliares*/
 	#auxiliary{
-		padding-left: 15px;
+		padding-left: 0px !important;
+		padding-right: 0px !important;
 		text-align: left;
+		width: 100%;
 	}
 	
 	/*Boton de login auxiliar*/

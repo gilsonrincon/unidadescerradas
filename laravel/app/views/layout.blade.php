@@ -104,9 +104,8 @@
 					</nav>
 				</header>
 			</div>
-
-		@yield('content')
-
+			@yield('content')
+		</div>
 		<section>
 			<div class="container">
 				<div id="foot-bt" class="col-md-12">

@@ -121,6 +121,5 @@
 		  icon: "http://creacioninmobiliaria.com/img/maps.png"
 		});
 	</script>
-
 </section>
 @stop

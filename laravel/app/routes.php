@@ -33,10 +33,7 @@ Route::get('todoslosclasificados', function()
 });
 
 //Ruta para registrarse
-Route::get('registrarse', function()
-{
-	return View::make('registrarse');
-});
+Route::get('registrarse', 'homeController@showRegister');
 
 //Ruta de quejas y reclamos
 Route::get('quejasyreclamos', function()
@@ -57,10 +54,7 @@ Route::get('pagaradministracion', function()
 });
 
 //Ruta para ingresar
-Route::get('ingresar', function()
-{
-	return View::make('ingresar');
-});
+Route::get('ingresar', 'homeController@showLogin');
 
 //Ruta de la información de las unidades
 Route::get('informacionunidad', function()
