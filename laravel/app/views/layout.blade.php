@@ -14,15 +14,22 @@
 				if($(window).width() <= 980){
 					$("#bulleing-board").appendTo('#main-home')
 					$("#no-premium").appendTo('#all-classified-lists')
+					$("#calendar").appendTo('#reservations-container')
+					$("#reservations-form").appendTo('#reservations-container')
 				}
 				$(window).resize(function(event) {
 					if($(window).width() <= 980){
 						$("#bulleing-board").appendTo('#main-home')
 						$("#no-premium").appendTo('#all-classified-lists')
+						$("#calendar").appendTo('#reservations-container')
+						$("#reservations-form").appendTo('#reservations-container')
 					} else {
 						$("#closed-unit").appendTo('#main-home')
 						$("#premium").appendTo('#all-classified-lists')
 						$("#hide-menu").slideUp(20)
+						$("#calendar").appendTo('#reservations-container')
+						$("#reservations-text").appendTo('#reservations-container')
+						$("#reservations-form").appendTo('#reservations-container')
 					}
 				});
 

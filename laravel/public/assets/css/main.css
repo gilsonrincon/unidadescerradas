@@ -785,13 +785,16 @@ input[type="date"] {
 
 	/*Cambio en el tamaño del boton de registrarse*/
 	.btn-submit {
+		display: block;
 		font-size: 11px;
 		height: 40px;
+		margin: auto;
+		position: relative;
 		width: 140px;
 	}
 
 	/*Cambiamos el relleno del boton de registrarse*/
-	#register, #login {
+	#register, #login, #reservations-container {
 		box-shadow: 0 0 0 #fff;
 		padding: 5%;
 	}
@@ -814,7 +817,7 @@ input[type="date"] {
 	}
 	
 	/*Ocultamos el recordarme normal*/
-	#login-form div label {
+	#login-form div label, #reservations-form label {
 		display: none;
 	}
 
@@ -826,6 +829,15 @@ input[type="date"] {
 	#login-form div a {
 		font-size: 12px;
 		width: 48%;
+	}
+
+	#reservations-text h2 {
+		font-size: 13px;
+	}
+
+	#reservations-text p {
+		font-size: 13px;
+		margin-top: 0px;
 	}
 
 }
