@@ -488,8 +488,8 @@ footer {
 	text-transform: uppercase;
 }
 
-/*contenedor del formulario de registro*/
-#register, #login {
+/*contenedor del formulario de registro, login, resercaviones*/
+#register, #login, #reservations-container {
 	background: #fff;
 	border-radius: 0 0 20px 20px;
 	box-shadow: 0px 0px 15px #888888;
@@ -499,7 +499,7 @@ footer {
 }
 
 /*Estilos de los inputs*/
-#register .text, #login .text {
+#register .text, #login .text, #reservations-form .text {
 	border: 1px solid #000000;
 	border-radius: 3px;
 	margin-bottom: 15px;
@@ -520,7 +520,7 @@ footer {
 }
 
 /*Estilo de los labels*/
-#register label {
+#register label, #reservations-form label {
 	font-size: 9px;
 	margin-left: 15px;
 	vertical-align: middle;
@@ -586,6 +586,38 @@ footer {
 	position: relative;
 }
 
+/*Texto en reservaciones*/
+#reservations-text p {
+	font-size: 11px;
+	margin-top: 30px;
+}
+
+/*Encabezado del texto en reservaciones*/
+#reservations-text h2 {
+	color: #002E54;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/*Descripción de las reservaciones*/
+#description-reservation {
+	font-size: 9px;
+	height: 75px;
+	resize: none;
+}
+
+/*Encabezado del formulario de reservaciones*/
+#reservations-form h2 {
+	color: #5D5D5D;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 20px 0 20px 30px;
+}
+
+/*Campo de fecha*/
+input[type="date"] {
+	line-height: 11px;
+}
 
 /*Estilos para resoluciones menores a los 980px*/
 @media (max-width: 990px){

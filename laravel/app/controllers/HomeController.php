@@ -1,7 +1,7 @@
 <?php
 
 class HomeController extends BaseController {
-
+	//Mostramos el inicio
 	public function showWelcome()
 	{
 		//Obtenemos los clasificados premium
@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 		return View::make('home', array('classifiedNoPremium' => $classifiedNoPremium, 'classifiedPremium' => $classifiedPremium, 'bulletins' => $bulletins));
 	}
 
+	//Mostramos registrarse
 	public function showRegister()
 	{
 		//Obtenemos la lista de dueños existente
@@ -29,9 +30,19 @@ class HomeController extends BaseController {
 		return View::make('registrarse', array('owners' => $owners, 'properties' => $properties));
 	}
 
+	//Mostramos el login
 	public function showLogin()
 	{
 		//Renderizamos la vista
 		return View::make('ingresar');
+	}
+
+	//Mostramos las reservaciones
+	public function showReservations()
+	{
+		//recuperamot todos los resvicios
+		$services = Service::all();
+		//Renderizamos la vista, pasamos la lista de servicios
+		return View::make('reservacionDeServicios', array('services' => $services));
 	}
 }

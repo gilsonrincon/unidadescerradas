@@ -15,10 +15,7 @@
 Route::get('/', 'homeController@showWelcome');
 
 //Ruta de la reservacion de los servicios
-Route::get('reservaciondeservicios', function()
-{
-	return View::make('reservacionDeServicios');
-});
+Route::get('reservaciondeservicios', 'homeController@showReservations');
 
 //Ruta del calendario de eventos
 Route::get('calendariodeeventos', function()
