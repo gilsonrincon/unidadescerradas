@@ -45,4 +45,10 @@ class HomeController extends BaseController {
 		//Renderizamos la vista, pasamos la lista de servicios
 		return View::make('reservacionDeServicios', array('services' => $services));
 	}
+
+	//Mostramos contacto
+	public function showContact()
+	{
+		return View::make('contacto');
+	}
 }

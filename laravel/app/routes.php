@@ -72,12 +72,7 @@ Route::get('documentosdelaunidad', function()
 });
 
 //Ruta de contacto
-Route::get('contacto', function()
-{
-	return View::make('contacto');
-});
-
-
+Route::get('contacto', 'homeController@showContact');
 
 /*Rutas del controlador de usuarios*/
 Route::resource('users', 'UsersController');

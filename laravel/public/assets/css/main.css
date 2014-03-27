@@ -489,7 +489,7 @@ footer {
 }
 
 /*contenedor del formulario de registro, login, resercaviones*/
-#register, #login, #reservations-container {
+#register, #login, #reservations-container, .content {
 	background: #fff;
 	border-radius: 0 0 20px 20px;
 	box-shadow: 0px 0px 15px #888888;
@@ -499,7 +499,7 @@ footer {
 }
 
 /*Estilos de los inputs*/
-#register .text, #login .text, #reservations-form .text {
+#register .text, #login .text, #reservations-form .text, .content .text {
 	border: 1px solid #000000;
 	border-radius: 3px;
 	margin-bottom: 15px;
@@ -617,6 +617,23 @@ footer {
 /*Campo de fecha*/
 input[type="date"] {
 	line-height: 11px;
+}
+
+/*Texto en contacto*/
+#contact-text {
+	font-size: 11px;
+	margin: 50px 0 50px 0;
+}
+
+/*Información de contacto*/
+.contact-info {
+	display: inline-block;
+	width: 48%;
+}
+
+textarea {
+	height: 80px;
+	resize: none;
 }
 
 /*Estilos para resoluciones menores a los 980px*/
@@ -794,7 +811,7 @@ input[type="date"] {
 	}
 
 	/*Cambiamos el relleno del boton de registrarse*/
-	#register, #login, #reservations-container {
+	#register, #login, #reservations-container, .content {
 		box-shadow: 0 0 0 #fff;
 		padding: 5%;
 	}
@@ -809,6 +826,7 @@ input[type="date"] {
 	.title {
 		background: #fff;
 		color: #3879A5;
+		font-weight: bold;
 	}
 	
 	/*Mostramos contenido oculto*/
@@ -838,6 +856,11 @@ input[type="date"] {
 	#reservations-text p {
 		font-size: 13px;
 		margin-top: 0px;
+	}
+
+	/*Ocultamos el texto en contacto*/
+	#contact-text {
+		display: none;
 	}
 
 }
