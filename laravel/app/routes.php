@@ -26,6 +26,10 @@ Route::get('calendariodeeventos', function()
 //Ruta de los clasificados
 Route::get('todoslosclasificados', 'homeController@showAllClassified');
 
+
+//Ruta la cartelera informativa
+Route::get('todoslosdecartelera', 'homeController@showAllBulletins');
+
 //Ruta para registrarse
 Route::get('registrarse', 'homeController@showRegister');
 
@@ -46,9 +50,6 @@ Route::get('pagaradministracion', function()
 {
 	return View::make('pagarAdministracion');
 });
-
-//Ruta para ingresar
-Route::get('ingresar', 'homeController@showLogin');
 
 //Ruta de la información de las unidades
 Route::get('informacionunidad', function()
@@ -82,3 +83,6 @@ Route::resource('bulletins', 'BulletinBoardController');
 
 //Rutas para el controlador de servicios
 Route::resource('services', 'ServicesController');
+
+//Rutas para el login 
+Route::resource('ingresar', 'AuthController');

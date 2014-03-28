@@ -149,7 +149,7 @@ a:hover, a:focus {
 }
 
 /*Estilo del titulo de clasificados*/
-#bulleing-board h1 {
+#bulletin-board h1 {
 	background: url("../images/bulleingBoard.png");
 	background-size: 100% 100%;
 	color: #fff;
@@ -165,7 +165,7 @@ a:hover, a:focus {
 }
 
 /*Estilos de la lista de clasificados del home*/
-#bulleing-board ul {
+#bulletin-board ul {
 	border-radius: 0 0 20px 20px;
 	box-shadow: 0px 0px 15px #888888;
 	margin-top: -15px;
@@ -174,7 +174,7 @@ a:hover, a:focus {
 }
 
 /*Estilos de los items la lista de clasificados del home*/
-#bulleing-board ul li {
+#bulletin-board ul li {
 	border: 1px solid #737B6C;
 	border-radius: 5px;
 	padding-top: 10px;
@@ -182,7 +182,7 @@ a:hover, a:focus {
 }
 
 /*Titulo de los clasificados en el home*/
-#bulleing-board ul li h3 {
+#bulletin-board ul li h3 {
 	color: #0082A5;
 	font-size: 14px;
 	margin-bottom: 0px;
@@ -695,19 +695,24 @@ textarea {
 	}
 
 	/*Modificaciones a la lista de la tabla de boletines*/
-	#bulleing-board ul {
+	#bulletin-board ul {
 		box-shadow: 0px 0px 0px #888888;
 		margin-top: 30px;
 	}
 
 	/*Modificaciones a los items de la tabla de boletines*/
-	#bulleing-board ul li {
+	#bulletin-board ul li {
 		display: inline-block;
 		margin-left: 3%;
 		margin-right: 2%;
 		margin-bottom: 10px;
 		vertical-align: top;
 		width: 44%;
+	}
+
+	/*Borde para los elementos de la tabla de boletines*/
+	#bulletin-board ul li {
+		border: 1px solid #737B6C !important;
 	}
 	
 	/*Relleno superior para el encabezado de todos los clasificados*/
@@ -787,12 +792,12 @@ textarea {
 	}
 
 	/*Aumnetamos el margen superior de los titulos en la cartelera*/
-	#bulleing-board ul li h3{
+	#bulletin-board ul li h3{
 		margin: 10px 0;
 	}
 	
 	/*Aumentamos el ancho de las imagenes en la cartelera*/
-	#bulleing-board ul li img {
+	#bulletin-board ul li img {
 		width: 100%;
 	}
 	
@@ -923,7 +928,7 @@ textarea {
 
 /*Resolución menor a 980px*/
 @media (min-width: 980px){
-	#bulleing-board ul li img {
+	#bulletin-board ul li img {
 		height: 70px;
 		padding-bottom: 16px;
 		width: 171px;

@@ -8,7 +8,7 @@
 		<div id="login">
 			<p>años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, </p>
 			<div id="login-form">
-				{{ Form::open() }}
+				{{Form::open(array('action'=>'ingresar.store'))}}
 					<label id="email-label" for="email">
 						{{ Form::input('text', 'email', '', array('placeholder'=>'CORREO:', 'class'=> 'text')) }}
 					</label>

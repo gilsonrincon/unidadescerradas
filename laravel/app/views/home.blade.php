@@ -10,14 +10,14 @@
 				<img id="banner" class="col-md-12" src="assets/images/banner.png" alt="Banner">
 			</div>
 			<!-- Contenedor de los clasificados -->
-			<div id="bulleing-board" class="col-md-6">
+			<div id="bulletin-board" class="col-md-6">
 				<h1>Cartelera Informativa</h1>
 				<ul>
 					@foreach ($bulletins as $b)
 						<li>
 							<img class="col-md-4" src="bulletinsImages/{{ $b->image->image }}" alt="">
 							
-							<div class="bulleingBoard col-md-8">
+							<div class="bulletin-board col-md-8">
 								<h3>{{$b->title}}:</h3>
 								<p>{{$b->shortDescription}}</p>
 							</div>

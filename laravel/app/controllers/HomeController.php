@@ -11,7 +11,7 @@ class HomeController extends BaseController {
 		$classifiedNoPremium = Classified::where('premium', '=', false)->take(5)->get();
 
 		//Obtenemos elementos de la tabla de boletines
-		$bulletins = bulletinBoard::where('startDate', '>=', date('Y-m-d'))->orderBy('id', 'DESC')->take(4)->get();
+		$bulletins = BulletinBoard::where('startDate', '>=', date('Y-m-d'))->orderBy('id', 'DESC')->take(4)->get();
 		
 		//Renderizamos la vista pasando los clasificados
 		return View::make('home', array('classifiedNoPremium' => $classifiedNoPremium, 'classifiedPremium' => $classifiedPremium, 'bulletins' => $bulletins));
@@ -28,13 +28,6 @@ class HomeController extends BaseController {
 
 		//Renderizamos la vista, pasamos la lista de dueños
 		return View::make('registrarse', array('owners' => $owners, 'properties' => $properties));
-	}
-
-	//Mostramos el login
-	public function showLogin()
-	{
-		//Renderizamos la vista
-		return View::make('ingresar');
 	}
 
 	//Mostramos las reservaciones
@@ -62,5 +55,13 @@ class HomeController extends BaseController {
 		$classifiedNoPremium = Classified::where('premium', '=', false)->take(10)->get();
 
 		return View::make('todosLosClasificados', array('classifiedPremium' => $classifiedPremium, 'classifiedNoPremium' => $classifiedNoPremium));
+	}
+
+	//Mostramos todos los de la cartelera
+	public function showAllBulletins()
+	{	
+		//Obtenemos todos los boletines y los pasamos a la vista.
+		$bulletins = BulletinBoard::all();
+		return View::make('todosLosDeCartelera', array('bulletins' => $bulletins));
 	}
 }
