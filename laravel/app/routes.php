@@ -24,10 +24,7 @@ Route::get('calendariodeeventos', function()
 });
 
 //Ruta de los clasificados
-Route::get('todoslosclasificados', function()
-{
-	return View::make('todosLosClasificados');
-});
+Route::get('todoslosclasificados', 'homeController@showAllClassified');
 
 //Ruta para registrarse
 Route::get('registrarse', 'homeController@showRegister');

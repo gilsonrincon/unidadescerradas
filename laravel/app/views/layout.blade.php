@@ -14,6 +14,7 @@
 				if($(window).width() <= 980){
 					$("#bulleing-board").appendTo('#main-home')
 					$("#no-premium").appendTo('#all-classified-lists')
+					$("#no-premium-internal").appendTo('#all-classified-lists')
 					$("#calendar").appendTo('#reservations-container')
 					$("#reservations-form").appendTo('#reservations-container')
 				}
@@ -21,6 +22,7 @@
 					if($(window).width() <= 980){
 						$("#bulleing-board").appendTo('#main-home')
 						$("#no-premium").appendTo('#all-classified-lists')
+						$("#no-premium-internal").appendTo('#all-classified-lists')
 						$("#calendar").appendTo('#reservations-container')
 						$("#reservations-form").appendTo('#reservations-container')
 					} else {

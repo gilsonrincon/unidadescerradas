@@ -51,4 +51,16 @@ class HomeController extends BaseController {
 	{
 		return View::make('contacto');
 	}
+
+	//Mostramos todos los clasificados
+	public function showAllClassified()
+	{
+		//Obtenemos los clasificados premium
+		$classifiedPremium = Classified::where('premium', '=', true)->take(6)->get();
+		
+		//Obtenemos los clasificados no premium
+		$classifiedNoPremium = Classified::where('premium', '=', false)->take(10)->get();
+
+		return View::make('todosLosClasificados', array('classifiedPremium' => $classifiedPremium, 'classifiedNoPremium' => $classifiedNoPremium));
+	}
 }

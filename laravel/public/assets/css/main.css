@@ -313,7 +313,7 @@ a:hover, a:focus {
 }
 
 /*Enlaces de los clasificados que nos son premium*/
-#all-classified-lists #no-premium li a {
+#all-classified-lists #no-premium li a, #all-classified-lists #no-premium-internal li a {
 	border: 1px solid #5D5D5D;
 	border-left: 10px solid #5D5D5D;
 	border-radius: 0 5px 5px 0;
@@ -635,6 +635,7 @@ textarea {
 	height: 80px;
 	resize: none;
 }
+
 
 /*Estilos para resoluciones menores a los 980px*/
 @media (max-width: 990px){
