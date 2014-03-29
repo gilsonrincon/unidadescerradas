@@ -13,6 +13,16 @@ a:hover, a:focus {
 	color: #5D5D5D;
 	text-decoration: none;
 }
+/*Mensajes de error*/
+.error {
+	color: #f30101;
+	text-align:center;
+}
+/*Mensajes de completado o success*/
+.success {
+	color: #00ff26;
+	text-align:center;
+}
 
 /* Estilos para el logo, lo posicionamos de forma absoluta*/
 #logo {

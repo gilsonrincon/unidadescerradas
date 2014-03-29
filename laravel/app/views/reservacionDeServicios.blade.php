@@ -19,8 +19,15 @@
 			</div>
 
 			<div id="reservations-form" class="col-md-12">
+				@if(Session::has('success'))
+		            <p class="success">{{ Session::get('success') }}</p>
+		        @endif
+
+				@if(Session::has('error'))
+			            <p class="error">{{ Session::get('error') }}</p>
+			    @endif
 				<h2>FORMULARIO DE RESERVACIÓN</h2>
-				{{ Form::open() }}
+				{{Form::open(array('url' => '/reservaciondeservicios'))}}
 				<div class="col-md-6">
 					<select id="type-reservation" class="text" name="type">
 						<option value="0">TIPO DE RESERVACIÓN:</option>
@@ -28,7 +35,7 @@
 							<option value="{{ $s->id }}">{{$s->name}}</option>
 						@endforeach
 					</select>
-					<textarea id="description-reservation" class="text" name="description" cols="10" rows="10">DESCRIPCIÓN DE LA RESERVACIÓN</textarea>
+					<textarea id="description-reservation" class="text" name="description" cols="10" rows="10" placeholder="DESCRIPCIÓN DE LA RESERVACIÓN"></textarea>
 				</div>
 				<div class="col-md-6">
 					<input class="text" type="date" name="date">

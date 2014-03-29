@@ -15,7 +15,7 @@
 Route::get('/', 'homeController@showWelcome');
 
 //Ruta de la reservacion de los servicios
-Route::get('reservaciondeservicios', 'homeController@showReservations');
+//Route::get('reservaciondeservicios', 'homeController@showReservations');
 
 //Ruta del calendario de eventos
 Route::get('calendariodeeventos', function()
@@ -86,3 +86,6 @@ Route::resource('services', 'ServicesController');
 
 //Rutas para el login 
 Route::resource('ingresar', 'AuthController');
+
+//Rutas para reservación de servicios
+Route::resource('reservaciondeservicios', 'ReservationsController');

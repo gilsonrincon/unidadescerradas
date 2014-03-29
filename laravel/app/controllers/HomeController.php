@@ -30,15 +30,6 @@ class HomeController extends BaseController {
 		return View::make('registrarse', array('owners' => $owners, 'properties' => $properties));
 	}
 
-	//Mostramos las reservaciones
-	public function showReservations()
-	{
-		//recuperamot todos los resvicios
-		$services = Service::all();
-		//Renderizamos la vista, pasamos la lista de servicios
-		return View::make('reservacionDeServicios', array('services' => $services));
-	}
-
 	//Mostramos contacto
 	public function showContact()
 	{
