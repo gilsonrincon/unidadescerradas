@@ -2,84 +2,39 @@
 
 class AuthController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+	/*
+	Mostramos el formulario de login
+	*/
 	public function index()
 	{
 		//Renderizamos la vista
 		return View::make('ingresar');
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
+	/*
+	Funcion del login, en caso de que no se realize
+	regresara al formulario con un mensaje de error
+	*/
 	public function store()
 	{
+		//Obtenemos las credenciales
 		$credentials = array('username' => Input::get('email'), 'password' => Input::get('password'));
-		if(Auth::attempt($credentials)){
+
+		//Hacemos login
+		if(Auth::attempt($credentials, Input::get('remember'), 0)):
 			echo "login";
-		} else {
-			echo "nope";
-		}
+		else:
+			return Redirect::to('ingresar')->with('error', 'Tus datos son incorrectos')->withInput();
+		endif;
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	/*
+	Cerrar sesión con redirrección al formulario de login
+	*/
 	public function destroy($id)
 	{
-		//
+		Auth::logout();
+		Redirect::to("ingresar");
 	}
 
 }
