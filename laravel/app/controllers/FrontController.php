@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class FrontController extends BaseController {
 	//Mostramos el inicio
 	public function showWelcome()
 	{

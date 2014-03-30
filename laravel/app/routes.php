@@ -11,11 +11,11 @@
 |
 */
 
-//Ruta del Home, lleva al controlador home, en show welcome
-Route::get('/', 'homeController@showWelcome');
+//Ruta del home, lleva al controlador front, en show welcome
+Route::get('/', 'frontController@showWelcome');
 
 //Ruta de la reservacion de los servicios
-//Route::get('reservaciondeservicios', 'homeController@showReservations');
+//Route::get('reservaciondeservicios', 'frontController@showReservations');
 
 //Ruta del calendario de eventos
 Route::get('calendariodeeventos', function()
@@ -24,14 +24,14 @@ Route::get('calendariodeeventos', function()
 });
 
 //Ruta de los clasificados
-Route::get('todoslosclasificados', 'homeController@showAllClassified');
+Route::get('todoslosclasificados', 'frontController@showAllClassified');
 
 
 //Ruta la cartelera informativa
-Route::get('todoslosdecartelera', 'homeController@showAllBulletins');
+Route::get('todoslosdecartelera', 'frontController@showAllBulletins');
 
 //Ruta para registrarse
-Route::get('registrarse', 'homeController@showRegister');
+Route::get('registrarse', 'frontController@showRegister');
 
 //Ruta de quejas y reclamos
 Route::get('quejasyreclamos', function()
@@ -70,7 +70,7 @@ Route::get('documentosdelaunidad', function()
 });
 
 //Ruta de contacto
-Route::get('contacto', 'homeController@showContact');
+Route::get('contacto', 'frontController@showContact');
 
 /*Rutas del controlador de usuarios*/
 Route::resource('users', 'UsersController');
