@@ -24,6 +24,11 @@ a:hover, a:focus {
 	text-align:center;
 }
 
+/*Centrado*/
+.center {
+	text-align: center;
+}
+
 /* Estilos para el logo, lo posicionamos de forma absoluta*/
 #logo {
 	background: #fff;
@@ -644,6 +649,35 @@ input[type="date"] {
 textarea {
 	height: 80px;
 	resize: none;
+}
+
+/*Lista de imagenes de los clasificados individuales*/
+#classifiedImages {
+	text-align: center;
+}
+
+/*Items de la lista de imagenes en los clasificados individuales*/
+#classifiedImages li {
+	display: inline-block;
+	padding: 2%;
+	width: 30%;
+}
+
+/*Imagenes en los clasificados solos*/
+#classifiedImages img {
+	width: 100%;
+}
+
+/*Estilo de boton para algunos enlaces*/
+.link-buttom {
+	background: url("../images/btnRegister.png");
+	background-size: 100% 100%;
+	color: #fff; 
+	display: inline-block;
+	font-size: 10px;
+	margin-top: 40px;
+	padding: 8px 12px 8px 12px;
+	text-align: center;
 }
 
 

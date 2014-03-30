@@ -25,8 +25,8 @@ class Classified extends Eloquent {
 	}
 
 	//Relación que tiene con una imagen
-	public function image()
+	public function images()
 	{
-		return $this->hasOne('ImageClassified', 'classifiedId');
+		return $this->hasMany('ImageClassified', 'classifiedId');
 	}
 }

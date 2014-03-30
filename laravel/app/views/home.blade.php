@@ -76,7 +76,10 @@
 			<ul>
 				@foreach ($classifiedPremium as $classified)
 					<li class="col-md-12">
-						<img src="classifiedImages/{{ $classified->image->image }}" alt="Clasificado">
+						@foreach ($classified->images as $image)
+							<img src="{{asset('classifiedImages/'.$image->image)}}" alt="Clasificado">
+						@endforeach
+						
 						<div>{{ $classified->shortDescription }}</div>
 						<a class="view-more hide-tablet" href="/">Ver más</a>
 					</li>

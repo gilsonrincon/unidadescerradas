@@ -25,6 +25,7 @@ Route::get('calendariodeeventos', function()
 
 //Ruta de los clasificados
 Route::get('todoslosclasificados', 'frontController@showAllClassified');
+Route::get('clasificado/{id}', 'frontController@showCLassified');
 
 
 //Ruta la cartelera informativa

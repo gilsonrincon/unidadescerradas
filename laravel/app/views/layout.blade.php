@@ -2,10 +2,9 @@
 <html lang="en">
 	<head>
 		<title>Unidades Cerradas</title>
-
 		<!-- Enlaces a la hojas de estilo -->
-		<link rel="stylesheet" href="assets/css/bootstrap.css">
-		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
 		
 		<!-- Enlaces para el javascript -->
 		<script src="assets/js/jquery.js"></script>
@@ -49,7 +48,7 @@
 			<div class="row">
 				<header>
 					<!--Imagen del logotipo-->
-					<img id="logo" src="assets/images/logo.png" alt="logo">
+					<img id="logo" src="{{asset('assets/images/logo.png')}}" alt="logo">
 					
 					<!--Menu principal, tiene un ancho total de 12-->
 					<nav id="main-menu" class="col-md-12">
@@ -95,7 +94,7 @@
 					<!--Menu auxiliar para resoluciones menores de 980px-->
 					<nav id="auxiliary">
 						<a id="display-menu">
-							<img src="assets/images/btnDisplayMenu.png" alt="Menu">
+							<img src="{{asset('assets/images/btnDisplayMenu.png')}}" alt="Menu">
 						</a>
 						<a id="btn-login-auxiliary" href="/">Ingresar</a>
 						<a id="btn-publish-auxiliary" href="/">Publique su clasificado</a>

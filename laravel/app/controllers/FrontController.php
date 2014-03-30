@@ -48,6 +48,16 @@ class FrontController extends BaseController {
 		return View::make('todosLosClasificados', array('classifiedPremium' => $classifiedPremium, 'classifiedNoPremium' => $classifiedNoPremium));
 	}
 
+	//Un solo clasificado 
+	public function showCLassified($id)
+	{
+		//Obtenemos el clasificado
+		$classified = Classified::find($id);
+
+		//Retornamos la vista
+		return View::make('clasificado', array('classified' => $classified));
+	}
+
 	//Mostramos todos los de la cartelera
 	public function showAllBulletins()
 	{	
