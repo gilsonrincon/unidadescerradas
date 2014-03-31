@@ -664,7 +664,7 @@ textarea {
 }
 
 /*Imagenes en los clasificados solos*/
-#classifiedImages img {
+#classifiedImages li a img {
 	width: 100%;
 }
 
@@ -678,6 +678,30 @@ textarea {
 	margin-top: 40px;
 	padding: 8px 12px 8px 12px;
 	text-align: center;
+}
+
+/*Oculto*/
+.hide-container {
+	bottom: 0px;
+	background: rgba(0, 0, 0, 0.8);
+	display: none;
+	height: 100%;
+	left: 0px;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	width: 100%;
+	text-align: center;
+	z-index: 100;
+}
+
+/*Estilo del contenido oculto*/
+.hide-content {
+	background: #fff;
+	border-radius: 10px;
+	display: inline-block;
+	margin-top: 30px;
+	padding: 10px;
 }
 
 

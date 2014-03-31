@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
 		
 		<!-- Enlaces para el javascript -->
-		<script src="assets/js/jquery.js"></script>
+		<script src="{{asset('assets/js/jquery.js')}}"></script>
 		<script>
 			$(document).on('ready', function(){
 				if($(window).width() <= 980){
@@ -40,6 +40,7 @@
 				});
 			})
 		</script>
+		@yield('scripts')
 	</head>
 	<body>
 		<!-- Contenedor para poder usar bootstrap -->
