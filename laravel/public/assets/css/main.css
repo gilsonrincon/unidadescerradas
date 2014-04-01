@@ -548,16 +548,15 @@ footer {
 }
 
 /*Estilo del boton de registrarse*/
-.btn-submit {
+.btn-submit, .btn-submit-classified {
 	background: url("../images/btnRegister.png");
 	background-size: 100% 100%; 
 	border: 0px; 
 	color: #fff;
+	float: right;
 	font-size: 7px;
 	height: 21px;
-	position: absolute;
 	text-transform: uppercase;
-	right: 15px;
 	width: 83px;
 }
 
@@ -716,6 +715,21 @@ textarea {
 	padding: 10px;
 }
 
+/*Estilo del contenedor de los formularios para publicar un clasificado*/
+.classified-form {
+	border: 1px solid #969696;
+	font-size: 9px;
+	max-width: 400px;
+	margin: 0 2%;
+	width: 45%
+}
+
+/*Estilo de los titulos de los formularios para publicar clasificados*/
+.classified-form h2 {
+	color: #156BFF;
+	font-size: 13px;
+	text-align: center;
+}
 
 /*Estilos para resoluciones menores a los 980px*/
 @media (max-width: 990px){
@@ -957,9 +971,52 @@ textarea {
 		width: 156px;
 	}
 
+	/**/
+	.classified-form {
+		border: 0px solid #fff;
+		font-size: 13px;
+		max-width: 100%;
+		width: 95%;
+	}
+	
+	.classified-form form {
+		border: 1px solid #969696;
+		margin: auto;
+		margin-top: 3%;
+		padding: 2%;
+		width: 98%;
+	}
+
+	/*Titulo de los formularios para publicar un clasificado*/
+	.classified-form h2 {
+		background: url("../images/internalTitlesBack.png");
+		background-size: 100% 100%;
+		color: #fff;
+		font-size: 13px;
+		height: 40px;
+		margin-bottom: 0px;
+		padding-top: 13px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	/*Boton de enviar en clasificados*/
+	.btn-submit-classified {
+		display: block;
+		float: none;
+		font-size: 10px;
+		right: 5%;
+		min-width: 100px;
+		margin: auto;
+		width: 15%;
+	}
 }
 /*Resolucion maxima de 480px*/
 @media (max-width: 480px){
+	.content {
+		padding: 2% !important;
+	}
+
 	/*Boton de publicar clasificado auxiliar*/
 	#btn-publish-auxiliary {
 		margin-top: 0px;
