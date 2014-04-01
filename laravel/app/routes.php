@@ -54,10 +54,7 @@ Route::get('pagaradministracion', function()
 });
 
 //Ruta de la información de las unidades
-Route::get('informacionunidad', function()
-{
-	return View::make('informacionUnidad');
-});
+Route::get('informacionunidad', 'frontController@showInformation');
 
 //Ruta de la información de los clasificados
 Route::get('informacionclasificados', function()

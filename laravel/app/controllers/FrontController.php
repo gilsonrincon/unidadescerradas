@@ -98,4 +98,10 @@ class FrontController extends BaseController {
 		//Retornamos la vista
 		return View::make('cartelera', array('bulletin' => $bulletin));
 	}
+
+	//Ruta que muestra la información de la unidad
+	public function showInformation()
+	{
+		return View::make('informacionUnidad');
+	}
 }
