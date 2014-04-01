@@ -5,10 +5,10 @@ class FrontController extends BaseController {
 	public function showWelcome()
 	{
 		//Obtenemos los clasificados premium
-		$classifiedPremium = Classified::where('premium', '=', true)->take(3)->get();
+		$classifiedPremium = Classified::where('premium', '=', true)->where('endDate', '>=', date('Y-m-d'))->take(3)->get();
 		
 		//Obtenemos los clasificados no premium
-		$classifiedNoPremium = Classified::where('premium', '=', false)->take(5)->get();
+		$classifiedNoPremium = Classified::where('premium', '=', false)->where('endDate', '>=', date('Y-m-d'))->take(5)->get();
 
 		//Obtenemos elementos de la tabla de boletines
 		$bulletins = BulletinBoard::where('startDate', '>=', date('Y-m-d'))->orderBy('id', 'DESC')->take(4)->get();
@@ -39,11 +39,34 @@ class FrontController extends BaseController {
 	//Mostramos todos los clasificados
 	public function showAllClassified()
 	{
-		//Obtenemos los clasificados premium
-		$classifiedPremium = Classified::where('premium', '=', true)->take(6)->get();
+		/*Inicia el algoritmo para convertir la fecha para ser usada en la base de datos*/
+		//$date = date('Y');
 		
+		/*Obtenemos el mes real*/
+		/*$m = date('m');
+		if($m < 10):
+			$m = explode('0', $m);
+			$date .= '-'.$m[1];
+		else:
+			$date .= '-'.$m;
+		endif;*/
+
+		/*Obtenemos el dia real*/
+		/*$d = date('d');
+		if($d < 10):
+			$d = explode('0', $d);
+			$date .= '-'.$d[1];
+		else:
+			$date .= '-'.$d;
+		endif;*/
+
+		//echo $date;
+		/*Fin del algoritmo de la fecha*/
+
+		//Obtenemos los clasificados premium
+		$classifiedPremium = Classified::where('premium', '=', true)->where('endDate', '>=', date('Y-m-d'))->get();
 		//Obtenemos los clasificados no premium
-		$classifiedNoPremium = Classified::where('premium', '=', false)->take(10)->get();
+		$classifiedNoPremium = Classified::where('premium', '=', false)->where('endDate', '>=', date('Y-m-d'))->get();
 
 		return View::make('todosLosClasificados', array('classifiedPremium' => $classifiedPremium, 'classifiedNoPremium' => $classifiedNoPremium));
 	}
@@ -64,5 +87,15 @@ class FrontController extends BaseController {
 		//Obtenemos todos los boletines y los pasamos a la vista.
 		$bulletins = BulletinBoard::all();
 		return View::make('todosLosDeCartelera', array('bulletins' => $bulletins));
+	}
+
+	//Un solo boletin o de la cartelera
+	public function showBulletin($id)
+	{
+		//Obtenemos el clasificado
+		$bulletin = BulletinBoard::find($id);
+
+		//Retornamos la vista
+		return View::make('cartelera', array('bulletin' => $bulletin));
 	}
 }

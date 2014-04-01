@@ -30,6 +30,7 @@ Route::get('clasificado/{id}', 'frontController@showCLassified');
 
 //Ruta la cartelera informativa
 Route::get('todoslosdecartelera', 'frontController@showAllBulletins');
+Route::get('cartelera/{id}', 'frontController@showBulletin');
 
 //Ruta para registrarse
 Route::get('registrarse', 'frontController@showRegister');
