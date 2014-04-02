@@ -86,3 +86,12 @@ Route::resource('ingresar', 'AuthController');
 
 //Rutas para reservación de servicios
 Route::resource('reservaciondeservicios', 'ReservationsController');
+
+//Rutas para la administración de las propiedades
+Route::resource('propiedades', 'PropertiesController');
+
+//Rutas para la gestion de propietarios
+Route::resource('propietarios', 'OwnersController');
+
+//Rutas para la gestion de residentes
+Route::resource('residentes', 'ResidentsController');
