@@ -26,9 +26,9 @@ class ComplaintsController extends \BaseController {
 		
 		//Guardamos la queja y redireccionamos
 		if($complaint->save()):
-			Redirect::to('quejasyreclamos')->with('success', 'Su queja ha sido recibida.');
+			return Redirect::to('quejasyreclamos')->with('success', 'Su queja ha sido recibida.');
 		else:
-			Redirect::to('quejasyreclamos')->withInput()->with('error', 'Ocurrio un error, no se pudo enviar la queja.');
+			return Redirect::to('quejasyreclamos')->withInput()->with('error', 'Ocurrio un error, no se pudo enviar la queja.');
 		endif;
 	}
 

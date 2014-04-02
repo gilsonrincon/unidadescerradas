@@ -35,9 +35,9 @@ class ResidentsController extends \BaseController {
 
 		//Guardamos y redireccionamos dependiendo de si se pudo o no guardar.
 		if($resident->save()):
-			Redirect::to('propietarios')->with('success', 'Se ha guardado el propietario.');
+			return Redirect::to('propietarios')->with('success', 'Se ha guardado el propietario.');
 		else:
-			Redirect::to('propietarios')->with('error', 'No se pudo guardar el propietario');
+			return Redirect::to('propietarios')->with('error', 'No se pudo guardar el propietario');
 		endif;
 	}
 

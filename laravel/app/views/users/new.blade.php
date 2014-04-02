@@ -1,24 +1,40 @@
-{{ Form::open(array('route' => 'users.store', 'method'=>'POST'), array('role'=>'form')) }}
-	<!-- Campo para el nombre de usuario -->
-	{{ Form::label('username', 'Nombre de usuario') }}
-	{{ Form::input('text', 'username') }}<br>
-	
-	<!-- Campo para la contraseña -->
-	{{ Form::label('password', 'Contraseña') }}
-	{{ Form::input('password', 'password', '')}}<br>
+@extends('layout')
 
-	<!-- Campo para el tipo de usuario -->
-	{{ Form::label('userType', 'Tipo de usuario') }}
-	{{ Form::select('userType', array('admin'=>'administrador', 'normal'=>'normal')) }}<br>
+@section('content')
+	<section>
+ 		<h1 class="title">Nuevo Usuario</h1>
+ 		<div class="content">
+			{{ Form::open(array('route' => 'usuarios.store', 'method'=>'POST'), array('role'=>'form')) }}
+				<div class="col-md-6">
+					{{Form::text('username', '', array('class'=>'text', 'placeholder'=>'Nombre de usuario:'))}}
+					{{Form::password('password', array('class'=>'text', 'placeholder'=>'Contraseña:'))}}
+				</div>
+				
 
-	<!-- Identidad como propietario -->
-	{{ Form::label('ownerId', 'Propietario') }}
-	{{ Form::select('ownerId', array('0'=>'No es propietario')) }}<br>
+				<div class="col-md-6">
+					<select name="userType" class="text">
+						<option value="0">Tipo de usuario:</option>
+						<option value="0">Normal</option>
+						<option value="1">Administrador</option>
+					</select>
 
-	<!-- Identidad como residente -->
-	{{ Form::label('residentId', 'Residente') }}
-	{{ Form::select('residentId', array('0'=>'No es residente')) }}<br>
+					<select name="owner" class="text">
+						<option value="0">No es propietario:</option>
+						@foreach ($owners as $owner)
+							<option value="{{$owner->id}}">{{$owner->name}} {{$owner->lastName}}</option>
+						@endforeach
+					</select>
 
-	{{ Form::button('Guardar', array('type'=>'submit'))}}
+					<select name="resident" id="" class="text">
+						<option value="0">No es residente</option>
+						@foreach ($residents as $resident)
+							<option value="{{$resident->id}}">{{$resident->name}} {{$resident->lastName}}</option>
+						@endforeach
+					</select>
+				</div>
+				{{Form::submit('Guardar', array('class'=>'btn-submit'))}}
 
-{{ Form::close() }}
+			{{ Form::close() }}
+		</div>
+	</section>
+@stop

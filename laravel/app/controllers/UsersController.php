@@ -18,7 +18,10 @@ class UsersController extends BaseController {
 
 	public function create()
 	{
-		return View::make('users.new');
+		//Obtenemos los propietarios y residentes y los pasamos a la vista
+		$owners = Owner::all();
+		$residents = Resident::all();
+		return View::make('users.new', array('owners'=>$owners, 'residents'=>$residents));
 	}
 
 	/*
@@ -35,10 +38,18 @@ class UsersController extends BaseController {
 		$user->username = Input::get('username');
 		$user->password = Input::get('password');
 		$user->userType = Input::get('userType');
-		$user->residentId = Input::get('residentId');;
-		$user->ownerId = Input::get('ownerId');
-		$user->save();
-		return Redirect::to('users');
+		$user->residentId = Input::get('resident');;
+		$user->ownerId = Input::get('owner');
+
+		//Guardamos, si guarda redireccionara indicando que todo se completo de forma exitosa,
+		//si no logra guardar, redireccionara indicando que ocurrio un error.
+		
+		if($user->save()):
+			return Redirect::to('usuarios')->with('success', 'Se ha creado el usuario de forma exitosa');
+		else:
+			return Redirect::to('usuarios/create')->withInput()->with('error', 'Ocurrio un error. No se guardo el usuario.');
+		endif;
+		
 	}
 
 	/*

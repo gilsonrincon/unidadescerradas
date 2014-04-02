@@ -70,7 +70,7 @@ Route::get('documentosdelaunidad', function()
 Route::get('contacto', 'frontController@showContact');
 
 /*Rutas del controlador de usuarios*/
-Route::resource('users', 'UsersController');
+Route::resource('usuarios', 'UsersController');
 
 //Rutas para el controlador de los clasificados
 Route::resource('classified', 'ClassifiedController');

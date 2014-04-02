@@ -32,9 +32,9 @@ class PropertiesController extends \BaseController {
 
 		//Guardar y redireccionar, en caso de que no guarde enviara un mensaje de error
 		if($property->save()):
-			Redirect::to('propiedades')->with('success', 'Se ha guardado la propiedad correctamente.');
+			return Redirect::to('propiedades')->with('success', 'Se ha guardado la propiedad correctamente.');
 		else:
-			Redirect::to('propiedades')->withInput()->with('error', 'No se pudo guardar la propiedad');
+			return Redirect::to('propiedades')->withInput()->with('error', 'No se pudo guardar la propiedad');
 		endif;
 	}
 
