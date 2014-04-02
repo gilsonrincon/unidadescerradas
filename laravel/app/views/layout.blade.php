@@ -5,9 +5,11 @@
 		<!-- Enlaces a la hojas de estilo -->
 		<link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
 		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
-		
+		<link rel="stylesheet" type="text/css" href="{{asset('assets/js/jquery.datetimepicker.css')}}"/>
+
 		<!-- Enlaces para el javascript -->
 		<script src="{{asset('assets/js/jquery.js')}}"></script>
+		<script src="{{asset('assets/js/jquery.datetimepicker.js')}}"></script>
 		<script>
 			$(document).on('ready', function(){
 				if($(window).width() <= 980){

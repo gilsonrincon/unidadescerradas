@@ -29,6 +29,14 @@
 			$('.hide-container').click(function(event) {
 				$(this).fadeOut('500');
 			});
+
+			//Calendario
+			$('#calendar').datetimepicker(
+				{
+					lang:'es',
+					format:'Y-m-d H:i',
+				}
+			);
 		})
 	</script>
 @stop
@@ -39,10 +47,7 @@
 			RESERVACIÓN DE SERVICIOS
 		</h1>
 		<div id="reservations-container">
-			<div id="calendar" class="col-md-6">
-				<img class="col-md-12" src="assets/images/calendarImage.png" alt="Calendario">
-			</div>
-			<div id="reservations-text" class="col-md-6">
+			<div id="reservations-text" class="col-md-12">
 				<h2>
 					PARA  HACER UNA RESERVACION DE ALGUN SERVIO DE LA UNIDAD DEBES :
 				</h2>
@@ -71,8 +76,8 @@
 					<textarea id="description-reservation" class="text" name="description" cols="10" rows="10" placeholder="DESCRIPCIÓN DE LA RESERVACIÓN"></textarea>
 				</div>
 				<div class="col-md-6">
-					<input id="date" class="text" type="date" name="date">
-					<input class="text" type="text" name="tel" placeholder="TELEFONO:">
+					<input id="calendar" class="text" type="text" name="date">
+					<input class="text" type="tel" name="tel" placeholder="TELEFONO:">
 					<label><input type="checkbox" id="accept"> Acepto que quiero publicar esto en la plataforma</label>
 					<input id="submit-reservation" type="submit" class="btn-submit" value="Reservar">
 				</div>
