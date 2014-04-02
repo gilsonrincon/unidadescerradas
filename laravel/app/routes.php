@@ -36,10 +36,8 @@ Route::get('cartelera/{id}', 'frontController@showBulletin');
 Route::get('registrarse', 'frontController@showRegister');
 
 //Ruta de quejas y reclamos
-Route::get('quejasyreclamos', function()
-{
-	return View::make('quejasYReclamos');
-});
+Route::get('quejasyreclamos', 'complaintsController@index');
+Route::post('quejasyreclamos/reclamar', 'complaintsController@store');
 
 //Ruta para publicar información
 Route::get('publicarinformacion', function()

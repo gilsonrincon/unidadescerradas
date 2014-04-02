@@ -1,5 +1,38 @@
 @extends ('layout')
 
+@section ('scripts')
+	<script>
+		$(document).on('ready', function(){
+			//Validamos el formulario
+			$('#submit-reservation').click(function(event) {
+				//Validamos que se seleccione un tipo de reservación
+				if($('#type-reservation').val() == 0){
+					$('.hide-content p').text('Debe seleccionar un tipo de reservación')
+					$('.hide-container').fadeIn(500);
+					event.preventDefault()
+					return false
+				}
+
+				//Validamos la fecha
+				if($('#date').val() == ''){
+					$('.hide-content p').text('Debe colocar una fecha completa')
+					$('.hide-container').fadeIn(500);
+					event.preventDefault()
+					return false
+				}
+
+				event.preventDefault()
+				return false
+			});
+
+			//Ocultamos el hide container
+			$('.hide-container').click(function(event) {
+				$(this).fadeOut('500');
+			});
+		})
+	</script>
+@stop
+
 @section ('content')
 	<section>
 		<h1 class="title">
@@ -38,12 +71,19 @@
 					<textarea id="description-reservation" class="text" name="description" cols="10" rows="10" placeholder="DESCRIPCIÓN DE LA RESERVACIÓN"></textarea>
 				</div>
 				<div class="col-md-6">
-					<input class="text" type="date" name="date">
+					<input id="date" class="text" type="date" name="date">
 					<input class="text" type="text" name="tel" placeholder="TELEFONO:">
 					<label><input type="checkbox" id="accept"> Acepto que quiero publicar esto en la plataforma</label>
-					<input type="submit" class="btn-submit" value="Reservar">
+					<input id="submit-reservation" type="submit" class="btn-submit" value="Reservar">
 				</div>
 				{{ Form::close() }}
+
+				{{-- Usado para mostrar errores de validación --}}
+				<div class="hide-container">
+					<div class="hide-content">
+						<p></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

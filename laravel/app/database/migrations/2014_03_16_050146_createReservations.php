@@ -21,7 +21,9 @@ class CreateReservations extends Migration {
 			$table->integer('userId');
 			$table->date('reserveWas');
 			$table->date('reservationDate');
-			
+			$table->text('description');
+			$table->integer('tel');
+
 			//Campos de tiempo
 			$table->timestamps();
 		});

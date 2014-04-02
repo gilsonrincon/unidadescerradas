@@ -28,9 +28,12 @@ class ReservationsController extends \BaseController {
 		//Usuario temporal de la reservación, se debe cambiar por el loggueado
 		$reservation->userId = 1;
 		
-		//Colocamos la fecha actual en que se reservo, y la fecha para la que se reservo.
+		//Colocamos la fecha actual en que se reservo, la fecha para la que se reservo, descripcion
+		//y telefono.
 		$reservation->reserveWas = date('Y-m-d');
 		$reservation->reservationDate = Input::get('date');
+		$reservation->descripcion = Input::get('descripcion');
+		$reservation->tel = Input::get('tel');
 
 		//Guardamos la resercación, si no es posible indicara que ocurrio un error
 		if($reservation->save()):
@@ -54,6 +57,7 @@ class ReservationsController extends \BaseController {
 
 	public function destroy($id)
 	{
+		
 	}
 
 }

@@ -104,4 +104,10 @@ class FrontController extends BaseController {
 	{
 		return View::make('informacionUnidad');
 	}
+
+	//Formulario para las quejas y reclamos
+	public function showComplaints()
+	{
+		return View::make('quejasYReclamos');
+	}
 }

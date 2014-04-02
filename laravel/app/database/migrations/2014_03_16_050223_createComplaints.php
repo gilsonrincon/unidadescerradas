@@ -20,6 +20,7 @@ class CreateComplaints extends Migration {
 			$table->string('title');
 			$table->integer('userId');
 			$table->date('complaintDate');
+			$table->text('description');
 			
 			//Campos de tiempo
 			$table->timestamps();
