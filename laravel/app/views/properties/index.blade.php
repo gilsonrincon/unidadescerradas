@@ -9,12 +9,12 @@
 			{{ link_to('propiedades/create', 'Nueva Propiedad') }}
 			<br>
 			<table class="table">
-				<th>
-					<td>Referencia</td>
-					<td>Propietario</td>
-					<td>Inquilino</td>
-					<td>Acciones</td>
-				</th>
+				<tr>
+					<th>Referencia</th>
+					<th>Propietario</th>
+					<th>Inquilino</th>
+					<th>Acciones</th>
+				</tr>
 				@foreach($properties as $property)
 					<tr>
 						<td>{{$property->reference}}</td>

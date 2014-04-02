@@ -1,24 +1,32 @@
-{{ Form::open(array('route' => 'users.store', 'method'=>'POST'), array('role'=>'form')) }}
-	<!-- Campo para el nombre de usuario -->
-	{{ Form::label('username', 'Nombre de usuario') }}
-	{{ Form::input('text', 'username') }}<br>
-	
-	<!-- Campo para la contraseña -->
-	{{ Form::label('password', 'Contraseña') }}
-	{{ Form::input('password', 'password', '')}}<br>
+@extends ('layout')
 
-	<!-- Campo para el tipo de usuario -->
-	{{ Form::label('userType', 'Tipo de usuario') }}
-	{{ Form::select('userType', array('admin'=>'administrador', 'normal'=>'normal')) }}<br>
+@section ('content')
+	<section>
+		<h1 class="title">Nueva Propiedad</h1>
+		<div class="content">
+			{{ Form::open(array('route' => 'propiedades.store', 'method'=>'POST'), array('role'=>'form')) }}
+			<div class="col-md-6">
+				{{Form::text('reference', '', array('class'=>'text', 'placeholder'=>'Referencia:'))}}
+			</div>
+			<div class="col-md-6">
+				<select name="owner" class="text">
+					<option value="0">Seleccionar un propietario</option>
+					@foreach ($owners as $owner)
+						<option value="{{$owner->id}}">{{$owner->name}} {{$owner->lastName}}</option>
+					@endforeach
+				</select>
 
-	<!-- Identidad como propietario -->
-	{{ Form::label('ownerId', 'Propietario') }}
-	{{ Form::select('ownerId', array('0'=>'No es propietario')) }}<br>
+				<select name="resident" class="text">
+					<option value="0">Seleccionar un residente</option>
+					@foreach ($residents as $resident)
+						<option value="{{$resident->id}}">{{$resident->name}} {{$resident->lastName}}</option>
+					@endforeach
+				</select>
+			</div>
 
-	<!-- Identidad como residente -->
-	{{ Form::label('residentId', 'Residente') }}
-	{{ Form::select('residentId', array('0'=>'No es residente')) }}<br>
+			{{Form::submit('Guardar', array('class'=>'btn-submit'))}}
 
-	{{ Form::button('Guardar', array('type'=>'submit'))}}
-
-{{ Form::close() }}
+			{{ Form::close() }}
+		</div>
+	</section>
+@stop

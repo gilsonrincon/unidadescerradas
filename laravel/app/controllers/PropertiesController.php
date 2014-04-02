@@ -9,65 +9,50 @@ class PropertiesController extends \BaseController {
 		return View::make('properties.index', array('properties'=>$properties));
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
+	/*Crear nuevas propiedades*/
 	public function create()
 	{
-		//
+		//Lista de propietarios
+		$owners = Owner::all();
+		$residents = Resident::all();
+		return View::make('properties.new', array('owners'=>$owners, 'residents'=>$residents));
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
+	/*Guardamos la propiedad*/
 	public function store()
 	{
-		//
+		//Creamos una nueva propiedad
+		$property = new Property();
+
+		//Le asignamos los valores
+		$property->reference = Input::get('reference');
+		$property->ownerId = Input::get('owner');
+		$property->residentId = Input::get('resident');
+
+
+		//Guardar y redireccionar, en caso de que no guarde enviara un mensaje de error
+		if($property->save()):
+			Redirect::to('propiedades')->with('success', 'Se ha guardado la propiedad correctamente.');
+		else:
+			Redirect::to('propiedades')->withInput()->with('error', 'No se pudo guardar la propiedad');
+		endif;
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function show($id)
 	{
 		//
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function edit($id)
 	{
 		//
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function update($id)
 	{
 		//
 	}
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($id)
 	{
 		//
