@@ -781,6 +781,29 @@ textarea {
 	font-weight: bold;
 }
 
+/*Estilos para la paginación de todos los clasificados*/
+#premium ul div, #no-premium-internal ul div {
+	display: none;
+}
+
+.pagination {
+	display: block;
+	text-align: center;
+}
+
+.pagination a {
+	border: 1px solid #5D5D5D;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 8px;
+}
+
+.pagination a.active {
+	background: #5D5D5D;
+	font-weight: bold;
+}
+
 /*Estilos para resoluciones menores a los 980px*/
 @media (max-width: 990px){
 	/*Quitamos el fondo del cuerpo*/
