@@ -99,6 +99,12 @@ a:hover, a:focus {
 	padding-left: 0%;
 }
 
+.validation {
+	visibility: hidden;
+	text-align: center;
+	font-weight: bold;
+}
+
 /*Boton de publicar un clasificado*/
 #btn-publish {
 	background: url("../images/btnPublish.png");
