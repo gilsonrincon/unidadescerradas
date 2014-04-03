@@ -32,7 +32,7 @@ class ReservationsController extends \BaseController {
 		//y telefono.
 		$reservation->reserveWas = date('Y-m-d');
 		$reservation->reservationDate = Input::get('date');
-		$reservation->descripcion = Input::get('descripcion');
+		//$reservation->descripcion = Input::get('descripcion');
 		$reservation->tel = Input::get('tel');
 
 		//Guardamos la resercación, si no es posible indicara que ocurrio un error

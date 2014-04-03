@@ -79,12 +79,18 @@
 
 			<div id="reservations-form" class="col-md-12">
 				@if(Session::has('success'))
-		            <p class="success">{{ Session::get('success') }}</p>
+				<div class="alert alert-success">
+				 	<p>{{ Session::get('success') }}</p>
+				</div>
+		            
 		        @endif
 
 				@if(Session::has('error'))
-			            <p class="error">{{ Session::get('error') }}</p>
+					<div class="alert alert-danger">
+					    <p class="error">{{ Session::get('error') }}</p>
+					</div>
 			    @endif
+			
 				<h2>FORMULARIO DE RESERVACIÓN</h2>
 				{{Form::open(array('url' => '/reservaciondeservicios'))}}
 				<div class="col-md-6">
