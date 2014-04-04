@@ -10,6 +10,7 @@
 		<!-- Enlaces para el javascript -->
 		<script src="{{asset('assets/js/jquery.js')}}"></script>
 		<script src="{{asset('assets/js/jquery.datetimepicker.js')}}"></script>
+		<script src="{{asset('assets/js/validations.js')}}"></script>
 		<script>
 			$(document).on('ready', function(){
 				if($(window).width() <= 980){
@@ -42,6 +43,7 @@
 				});
 			})
 		</script>
+
 		@yield('scripts')
 	</head>
 	<body>

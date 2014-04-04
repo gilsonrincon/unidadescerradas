@@ -8,7 +8,7 @@
 		<div class="content">
 			{{ link_to('propiedades/create', 'Nueva Propiedad') }}
 			<br>
-			<table class="table">
+			<table class="table table-striped">
 				<tr>
 					<th>Referencia</th>
 					<th>Propietario</th>

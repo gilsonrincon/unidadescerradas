@@ -14,8 +14,14 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+/*Mensajes de alerta sin margen inferior*/
 .alert{
 	margin-bottom: 0px;
+}
+
+/*Mostrar boton de borrar y enlaces a editar en la misma linea*/
+.table form, .table a {
+	float: left;
 }
 
 /*Centrado*/
