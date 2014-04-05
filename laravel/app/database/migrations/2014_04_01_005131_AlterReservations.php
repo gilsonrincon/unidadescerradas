@@ -9,7 +9,7 @@ class AlterReservations extends Migration {
 	public function up()
 	{	
 		Schema::table('reservations', function($table){
-			$table->text('description');
+			$table->text('description')->nullable();
 		});
 	}
 

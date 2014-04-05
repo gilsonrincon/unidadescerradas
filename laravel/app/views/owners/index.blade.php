@@ -1,19 +1,5 @@
 @extends('layout')
 
-@section ('scripts')
-	<script>
-		$(document).on('ready', function(){
-			//Click en un boton para borrar el propietario, se pide confirmación
-			$('.delete').click(function(event) {
-				if(confirm('¿Esta seguro que quiere borrar este propietario?')==false){
-					event.preventDefault()
-					return false
-				}
-			});
-		})
-	</script>
-@stop
-
 @section ('content')
 	<section>
 		<h1 class="title">
@@ -34,8 +20,7 @@
 			    @endif
 			</div>
 
-			{{ link_to('propietarios/create', 'Nuevo Propietario', array('class'=>'btn btn-primary')) }}<br>
-			<br>
+			{{ link_to('propietarios/create', 'Nuevo Propietario', array('class'=>'btn btn-primary')) }}<br><br>
 			<table class="table table-striped">
 				<tr>
 					<th>Nombre</th>

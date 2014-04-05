@@ -59,5 +59,18 @@ $(document).on('ready', function(){
 			event.preventDefault()
 			return false
 		}
+
+		//Validamos checkbox de aceptar
+		$accept = true
+		if($('#' + $form + ' .accept').is(':checked') == false){
+			$('#' + $form + ' .accept-label').css('color', '#f00')
+			$accept = false
+		}
+		
+		//En caso de que el checkbox de aceptar no se encuentre checked detiene el envio del formulario
+		if($accept == false){
+			event.preventDefault()
+			return false
+		}
 	});
 })

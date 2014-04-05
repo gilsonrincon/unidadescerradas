@@ -5,7 +5,21 @@
 		<h1 class="title">
 			Editar propietario
 		</h1>
+			
 			<div class="content">
+				<div class="col-md-12">
+					@if(Session::has('success'))
+						<div class="alert alert-success">
+						 	<p>{{ Session::get('success') }}</p>
+						</div>  
+			        @endif
+
+					@if(Session::has('error'))
+						<div class="alert alert-danger">
+						    <p class="error">{{ Session::get('error') }}</p>
+						</div>
+				    @endif
+				</div>
 				{{Form::open(array('route' => array('propietarios.update', $owner->id), 'id'=>'edit-owner', 'method'=>'PATCH'))}}
 				<div class="col-md-6">
 					{{Form::text('name', $owner->name, array('class'=>'text require', 'placeholder'=>'Nombre:'))}}

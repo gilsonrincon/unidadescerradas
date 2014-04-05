@@ -41,6 +41,14 @@
 					/*Mostramos el menu desplegable*/
 					$("#hide-menu").slideToggle(500);
 				});
+
+				//Click en un boton para borrar el propietario, se pide confirmación
+				$('.delete').click(function(event) {
+					if(confirm('¿Esta seguro que quiere borrar?')==false){
+						event.preventDefault()
+						return false
+					}
+				});
 			})
 		</script>
 
