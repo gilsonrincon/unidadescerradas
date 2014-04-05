@@ -24,6 +24,7 @@ class AuthController extends \BaseController {
 		if(Auth::attempt($credentials, Input::get('remember'), 0)):
 			echo "login";
 		else:
+			echo Input::get('email');
 			return Redirect::to('ingresar')->with('error', 'Tus datos son incorrectos')->withInput();
 		endif;
 	}

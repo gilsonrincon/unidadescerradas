@@ -2,6 +2,9 @@ $(document).on('ready', function(){
 	$('.btn-submit').click(function(event) {
 		//Recuperamos el formulario que se trata de recuperar
 		$form = $(this).data('form')
+		
+		//Si hay un label de aceptar lo regresamos al color negro por si estaba rojo
+		$('#' + $form + ' .accept-label').css('color', '#f00')
 
 		//Validamos campos requeridos, que no esten vacios
 		$allrequired = true
@@ -62,11 +65,13 @@ $(document).on('ready', function(){
 
 		//Validamos checkbox de aceptar
 		$accept = true
-		if($('#' + $form + ' .accept').is(':checked') == false){
-			$('#' + $form + ' .accept-label').css('color', '#f00')
-			$accept = false
-		}
-		
+		$('#' + $form + ' .accept').each(function(index, el) {
+			if($(this).is(':checked') == false){
+				$('#' + $form + ' .accept-label').css('color', '#f00')
+				$accept = false
+			}
+		})
+			
 		//En caso de que el checkbox de aceptar no se encuentre checked detiene el envio del formulario
 		if($accept == false){
 			event.preventDefault()

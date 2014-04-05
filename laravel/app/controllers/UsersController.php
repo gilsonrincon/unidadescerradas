@@ -40,6 +40,7 @@ class UsersController extends BaseController {
 		$user->userType = Input::get('userType');
 		$user->residentId = Input::get('resident');;
 		$user->ownerId = Input::get('owner');
+		$user->email = Input::get('email');
 
 		//Guardamos, si guarda redireccionara indicando que todo se completo de forma exitosa,
 		//si no logra guardar, redireccionara indicando que ocurrio un error.
@@ -72,8 +73,25 @@ class UsersController extends BaseController {
 	/*
 		Borramos el usuario
 	*/
-	public function delete($id)
+	public function destroy($id)
 	{
+		//Obtenemos el usuario, si existe lo borramos indicando que se pudo borrar, sino que no se pudo
+		if(User::destroy($id)):
+			return Redirect::back()->with('success', 'Se ha borrado el usuario.');
+		else:
+			return Redirect::back()->with('error', 'No se pudo borrar el usuario.');
+		endif;
+	}
 
+	/*Recuperamos si el email ya esta en uso*/
+	public function emailIsFree()
+	{
+		$email = Input::get('email');
+		$user = User::where('email', '=', $email);
+		if(is_null($user)):
+			return true;
+		else:
+			return false;
+		endif;
 	}
 }
