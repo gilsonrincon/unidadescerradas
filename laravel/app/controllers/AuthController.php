@@ -18,7 +18,7 @@ class AuthController extends \BaseController {
 	public function store()
 	{
 		//Obtenemos las credenciales
-		$credentials = array('username' => Input::get('email'), 'password' => Input::get('password'));
+		$credentials = array('email' => Input::get('email'), 'password' => Input::get('password'));
 
 		//Hacemos login
 		if(Auth::attempt($credentials, Input::get('remember'), 0)):

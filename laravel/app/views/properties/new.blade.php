@@ -6,7 +6,7 @@
 		<div class="content">
 			{{ Form::open(array('route' => 'propiedades.store', 'method'=>'POST'), array('role'=>'form')) }}
 			<div class="col-md-6">
-				{{Form::text('reference', '', array('class'=>'text', 'placeholder'=>'Referencia:'))}}
+				{{Form::text('reference', '', array('class'=>'text require', 'placeholder'=>'Referencia:'))}}
 			</div>
 			<div class="col-md-6">
 				<select name="owner" class="text">
