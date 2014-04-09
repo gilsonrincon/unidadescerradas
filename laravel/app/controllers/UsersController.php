@@ -36,7 +36,7 @@ class UsersController extends BaseController {
 		//Creamos al nuevo usuario, asignamos los valores y guardamos
 		$user = new User();
 		$user->username = Input::get('username');
-		$user->password = Input::get('password');
+		$user->password = Hash::make(Input::get('password'));
 		$user->userType = Input::get('userType');
 		$user->residentId = Input::get('resident');;
 		$user->ownerId = Input::get('owner');
