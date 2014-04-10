@@ -50,7 +50,7 @@
 									</div>
 									<div id="no-premium-internal-{{$pagination}}">
 								@endif
-							<li><a href="/">{{ $classified->shortDescription }}</a></li>
+							<li><a>{{ $classified->shortDescription }}</a></li>
 						@endforeach
 					</ul>
 					@if ($pagination > 1)
@@ -82,10 +82,12 @@
 							@endif
 							<li class="col-md-12">
 								@foreach ($classified->images as $image)
-									<img src="{{asset('classifiedImages/'.$image->image)}}" alt="Clasificado">
+									<a href="clasificado/{{$classified->id}}">
+										<img src="{{asset('classifiedImages/'.$image->image)}}" alt="Clasificado">
+									</a>
 								@endforeach
 								<div>{{ $classified->shortDescription }}</div>
-								<a class="view-more hide-tablet" href="/">Ver más</a>
+								<a class="view-more hide-tablet" href="clasificado/{{$classified->id}}">Ver más</a>
 							</li>
 						@endforeach
 					</ul>

@@ -345,6 +345,7 @@ a:hover, a:focus {
 	border-left: 10px solid #5D5D5D;
 	border-radius: 0 5px 5px 0;
 	color: #5D5D5D;
+	cursor: pointer;
 	display: block;
 	margin: 15px 0;
 	padding: 10px 0 10px 20px;
@@ -389,7 +390,7 @@ a:hover, a:focus {
 }
 
 /*Estilos del enlace de ver mas en premium*/
-#all-classified-lists #premium li a {
+#all-classified-lists #premium li a.view-more {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;

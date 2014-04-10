@@ -15,16 +15,20 @@
 				<ul>
 					@foreach ($bulletins as $b)
 						<li>
-							<img class="col-md-4" src="bulletinsImages/{{ $b->image->image }}" alt="">
+							<a href="cartelera/{{$b->id}}">
+								<img class="col-md-4" src="bulletinsImages/{{ $b->image->image }}" alt="">
+							</a>
 							
 							<div class="bulletin-board col-md-8">
-								<h3>{{$b->title}}:</h3>
+								<a href="cartelera/{{$b->id}}">
+									<h3>{{$b->title}}:</h3>
+								</a>
 								<p>{{$b->shortDescription}}</p>
 							</div>
 						</li>
 					@endforeach
 
-					<a class="view-more" href="/">Ver más</a>
+					<a class="view-more" href="todoslosdecartelera">Ver más</a>
 				</ul>
 
 			</div>
@@ -46,7 +50,7 @@
 
 					<li>
 						<p class="col-md-5">si tienes alguna queja o algun reclamo haznoslo saber</p>
-						<a id="btn-complaints" class="col-md-7" href="/">QUEJAS Y RECLAMOS</a>
+						<a id="btn-complaints" class="col-md-7" href="quejasyreclamos">QUEJAS Y RECLAMOS</a>
 					</li>
 
 					<li>
@@ -66,33 +70,34 @@
 		<div id="no-premium" class="col-md-6">
 			<ul >
 			@foreach ($classifiedNoPremium as $classified)
-				<li><a href="/">{{ $classified->shortDescription }}</a></li>
+				<li><a>{{ $classified->shortDescription }}</a></li>
 			@endforeach
 			</ul>
-			<a class="view-all" href="/">Ver todos</a>
+			<a class="view-all" href="todoslosclasificados">Ver todos</a>
 		</div>
 
 		<div id="premium" class="col-md-6">
 			<ul>
 				@foreach ($classifiedPremium as $classified)
 					<li class="col-md-12">
+						
 						@foreach ($classified->images as $image)
-							<img src="{{asset('classifiedImages/'.$image->image)}}" alt="Clasificado">
-						@endforeach
+							<a href="clasificado/{{$classified->id}}"><img src="{{asset('classifiedImages/'.$image->image)}}" alt="Clasificado"></a>
+						@endforeach 
 						
 						<div>{{ $classified->shortDescription }}</div>
-						<a class="view-more hide-tablet" href="/">Ver más</a>
+						<a class="view-more hide-tablet" href="clasificado/{{$classified->id}}">Ver más</a>
 					</li>
 				@endforeach
 			</ul>
-			<a class="view-all" href="/">Ver todos</a>
+			<a class="view-all" href="todoslosclasificados">Ver todos</a>
 		</div>
 	</div>
-	<a id="min-more-classified" class="view-more" href="/">Ver más</a>
+	<a id="min-more-classified" class="view-more" href="todoslosclasificados">Ver más</a>
 </section>
 <section>
 	<ul id="sub-menu" class="col-md-12">
-		<li><a href="/">Información de la unidad</a></li>
+		<li><a href="informacionunidad">Información de la unidad</a></li>
 		<li><a href="/">Paga tu administración</a></li>
 		<li><a href="/">Documentos</a></li>
 		<li><a href="/">Reglamento  y convivencia </a></li>

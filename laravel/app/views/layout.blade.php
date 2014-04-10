@@ -71,16 +71,16 @@
 							<li>
 								<a href="/">Clasificados</a>
 								<ul>
-									<li><a href="/">Cartelera Informativa</a></li>
-									<li><a href="/">Todos los Clasificados</a></li>
-									<li><a href="/">Publicar Clasificado</a></li>
+									<li><a href="todoslosdecartelera">Cartelera Informativa</a></li>
+									<li><a href="todoslosclasificados">Todos los Clasificados</a></li>
+									<li><a href="classified/create">Publicar Clasificado</a></li>
 								</ul>
 							</li>
 							<li><a href="/">Pagar Administración</a></li>
 							<li>
 								<a href="/">Información</a>
 								<ul>
-									<li><a href="/">Inf. Unidad Cerrada</a></li>
+									<li><a href="informacionunidad">Inf. Unidad Cerrada</a></li>
 									<li><a href="/">Documentos</a></li>
 								</ul>
 							</li>
@@ -88,19 +88,19 @@
 								<a href="/">Eventos</a>
 								<ul>
 									<li><a href="/">Calendario de Eventos</a></li>
-									<li><a href="/">Reserva de servicios</a></li>
+									<li><a href="reservaciondeservicios">Reserva de servicios</a></li>
 								</ul>
 
 							</li>
-							<li><a href="/">Quejas</a></li>
-							<li><a href="/">Contacto</a></li>
+							<li><a href="quejasyreclamos">Quejas</a></li>
+							<li><a href="contacto">Contacto</a></li>
 						</ul>
 
 						<!-- Enlaces de acceso y para publicar un clasificado -->
 						<div id="btns-access">
-							<a id="btn-login" href="/">Ingresar</a><span style="color:">|</span>
-							<a id="btn-signin" href="/">Registrarse</a>
-							<a id="btn-publish" href="/">Publique su clasificado</a>
+							<a id="btn-login" href="/ingresar">Ingresar</a><span style="color:">|</span>
+							<a id="btn-signin" href="/registrarse">Registrarse</a>
+							<a id="btn-publish" href="classified/create">Publique su clasificado</a>
 						</div>
 					</nav>
 
@@ -115,12 +115,12 @@
 					<nav>
 						<ul id="hide-menu">
 							<li><a href="/">Inicio</a></li>
-							<li><a href="/">Clasificados</a></li>
+							<li><a href="todoslosclasificados">Clasificados</a></li>
 							<li><a href="/">Pagar administración</a></li>
-							<li><a href="/">Información</a></li>
+							<li><a href="informacionunidad">Información</a></li>
 							<li><a href="/">Eventos</a></li>
-							<li><a href="/">Quejas</a></li>
-							<li><a href="/">Contacto</a></li>
+							<li><a href="quejasyreclamos">Quejas</a></li>
+							<li><a href="contacto">Contacto</a></li>
 						</ul>
 					</nav>
 				</header>
